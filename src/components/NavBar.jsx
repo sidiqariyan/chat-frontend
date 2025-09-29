@@ -7,7 +7,7 @@ export default function NavBar() {
   const onEnter = () => setOpen(true)
   const onLeave = () => setOpen(false)
   const onToggle = () => setOpen(v => !v)
-  const dropdownStyle = open ? { display: 'block', zIndex: 1040, left: 0, right: 0, top: '100%', width: '100%' } : {}
+  const dropdownStyle = open ? { display: 'block', opacity: 1, visibility: 'visible', transform: 'translateY(0)', zIndex: 1040, position: 'absolute', left: 0, right: 0, top: '100%' } : {}
 
   return (
     <nav className="navbar navbar-expand-lg sticky_nav navbar_fixed" style={{position:'sticky', top:0, zIndex:1030}}>
