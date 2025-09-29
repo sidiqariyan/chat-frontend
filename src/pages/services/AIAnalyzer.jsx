@@ -1,16 +1,50 @@
 import React from 'react'
 import SEO from '../../utils/SEO'
-import FAQSection from '../../components/FAQSection'
+import ServiceDetail from '../../components/ServiceDetail'
 
 export default function AIAnalyzer() {
+  const data = {
+    id: 'ai-analyzer',
+    title: 'AI Campaign Analyzer',
+    subtitle: 'Turn campaign signals into clear next steps for copy, timing, and targeting.',
+    heroImg: '/assets/img/home-one/analytic_img.png',
+    overview: 'Automatically surface insights on copy, timing, audience, deliverability health, and anomalies with clear recommendations you can act on.',
+    features: [
+      { title: 'Recommendations', desc: 'Actionable suggestions based on performance patterns.' },
+      { title: 'Anomaly Detection', desc: 'Alerts for unusual spikes or drops.' },
+      { title: 'Attribution', desc: 'Cohorts, paths, and contribution analysis.' },
+      { title: 'Exports', desc: 'Share findings with stakeholders and tools.' }
+    ],
+    steps: [
+      { title: 'Ingest', desc: 'Sync campaign and event data.' },
+      { title: 'Model', desc: 'Analyze patterns and correlations.' },
+      { title: 'Recommend', desc: 'Generate next-best-actions.' },
+      { title: 'Measure', desc: 'Track impact and iterate.' }
+    ],
+    benefits: [
+      { title: 'Clarity', desc: 'Know what to improve next.' },
+      { title: 'Speed', desc: 'Automate time-consuming analysis.' },
+      { title: 'Confidence', desc: 'Make decisions with stronger evidence.' },
+      { title: 'Alignment', desc: 'Share insights across teams easily.' }
+    ],
+    useCases: [
+      { title: 'Subject Lines', desc: 'Find patterns that drive opens and replies.' },
+      { title: 'Send Times', desc: 'Optimize windows by segment and locale.' },
+      { title: 'Targeting', desc: 'Refine audiences based on conversion paths.' }
+    ],
+    comparison: [
+      { title: 'Versus Manual Dashboards', desc: 'Proactive insights instead of static charts.' },
+      { title: 'Versus Black-box Tools', desc: 'Transparent rationale with clear actions.' }
+    ],
+    testimonials: [{}, {}],
+    faqs: [{}, {}],
+    cta: { label: 'Analyze Your Campaigns', href: '/signup' }
+  }
+
   return (
     <>
       <SEO title="AI Campaign Analyzer — Chatriox" description="Actionable insights for copy, timing, targeting, and health." />
-      <section className="sec_padding"><div className="container"><div className="section_title text-center"><h2 className="title-animation">AI Campaign Analyzer</h2><p>Turn signals into next steps.</p></div></div></section>
-      <section className="saas_features_area"><div className="container"><div className="row saas_features_item"><div className="col-lg-6"><div className="saas_features_img" data-bg-color="#ADDEF0"><img src="/assets/img/home-one/analytic_img.png" alt="" /></div></div><div className="col-lg-6"><div className="saas_features_content"><h3>Recommendations</h3><ul className="saas_list list-unstyled"><li><div className="icon"><img src="/assets/img/home-one/check.png" alt="" /></div>Timing</li><li><div className="icon"><img src="/assets/img/home-one/check.png" alt="" /></div>Copy</li></ul></div></div></div></div></section>
-      <section className="sec_padding"><div className="container"><div className="row"><div className="col-md-4"><div className="service_item"><h4>Anomalies</h4><p>Spot and fix fast.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Attribution</h4><p>Cohorts and paths.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Exports</h4><p>Share with your team.</p></div></div></div></div></section>
-      <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">Analyze your campaigns</h2><a href="/signup" className="saas_btn"><div className="btn_text"><span>Start</span><span>Start</span></div></a></div></div></section>
-      <FAQSection id="faq-aianalyzer" />
+      <ServiceDetail {...data} />
     </>
   )
 }
