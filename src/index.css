@@ -6,3 +6,4 @@
 .container-wide { @apply max-w-[1200px] mx-auto px-3; }
 .fade-in { @apply opacity-0 transition-opacity duration-500; }
 .fade-in.show { @apply opacity-100; }
+.brand-wordmark { letter-spacing: .5px; font-weight: 700; }
