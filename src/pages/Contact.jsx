@@ -45,6 +45,8 @@ export default function Contact() {
         </div>
       </section>
       <section className="sec_padding"><div className="container"><div className="row g-4"><div className="col-md-6"><div className="service_item"><h4>Support channels</h4><p>Email, chat (coming soon), and ticketing via the contact form.</p></div></div><div className="col-md-6"><div className="service_item"><h4>SLA & response times</h4><p>We aim to reply within one business day. Enterprise SLAs available.</p></div></div></div></div></section>
+      <StatsSection />
+      <Testimonials />
       <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">Prefer to talk to sales?</h2><a href="/pricing" className="saas_btn"><div className="btn_text"><span>View Plans</span><span>View Plans</span></div></a></div></div></section>
       <FAQSection id="faq-contact" />
     </>
