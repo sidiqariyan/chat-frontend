@@ -11,7 +11,7 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav menu me-lg-auto ms-lg-auto">
             <li className="nav-item dropdown submenu active">
-              <NavLink to="/" className="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</NavLink>
+              <NavLink to="/" className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</NavLink>
               <i className="fa fa-angle-down mobile_dropdown_icon"></i>
               <ul className="dropdown-menu">
                 <li className="nav-item active"><NavLink to="/" className="nav-link">Home</NavLink></li>
