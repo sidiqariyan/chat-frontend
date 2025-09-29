@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
 
 const plans = [
@@ -23,7 +24,7 @@ export default function Pricing() {
                   <ul className="list-unstyled">
                     {p.features.map(f => <li key={f}>{f}</li>)}
                   </ul>
-                  <a href="#" className="saas_btn"><div className="btn_text"><span>Start Free Trial</span><span>Start Free Trial</span></div></a>
+                  <Link to="/signup" className="saas_btn"><div className="btn_text"><span>Start Free Trial</span><span>Start Free Trial</span></div></Link>
                 </div>
               </div>
             ))}
