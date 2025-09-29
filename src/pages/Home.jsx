@@ -42,9 +42,17 @@ export default function Home() {
               </div>
             </div>
             <div className="col-lg-7">
-              <div className="saas_banner_img wow fadeInRight" data-wow-delay="0.2s">
-                <img src="assets/img/home-one/dash.png" alt="" />
-                <a href="https://www.youtube.com/watch?v=ok-plXXHlWw&pp=ygUEaHRtbA%3D%3D" className="video_popup popup-youtube"><i className="fa fa-play"></i></a>
+              <div className="saas_banner_img wow fadeInRight d-flex align-items-center justify-content-center gap-3" data-wow-delay="0.2s">
+                <img src="assets/img/home-one/dash.png" alt="Chatriox dashboard" />
+                <div className="d-none d-md-block">
+                  <div className="service_item p-2" style={{background:'rgba(255,255,255,.6)'}}>
+                    <strong className="d-block text-center mb-2">Global Signals</strong>
+                    {/* 3D decorative globe */}
+                    <div>
+                      {/* eslint-disable-next-line */}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
