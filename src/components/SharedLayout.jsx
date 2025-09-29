@@ -1,4 +1,3 @@
-import React from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import NavBar from './NavBar'
