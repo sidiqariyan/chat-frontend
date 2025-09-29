@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
 
 export default function Home() {
@@ -21,7 +22,11 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="Chatriox — Manage clients & teams in your digital Business" description="Scale outreach with Chatriox: Bulk Email, Bulk WhatsApp, Email Validation, Lead Scraper, Template Builder, AI Analyzer." image="/assets/img/home-one/dash.png" />
+      <SEO title="Chatriox — Manage clients & teams in your digital Business" description="Scale outreach with Chatriox: Bulk Email, Bulk WhatsApp, Email Validation, Lead Scraper, Template Builder, AI Analyzer." image="/assets/img/home-one/dash.png" schema={{
+        '@context':'https://schema.org', '@type':'Organization', name:'Chatriox', url:typeof window!=='undefined'?window.location.origin:'',
+        sameAs:[], logo:'/assets/img/home-one/1.png',
+        contactPoint:[{ '@type':'ContactPoint', contactType:'sales', email:'sales@chatriox.example' }]
+      }} />
       <section className="saas_banner_area" data-bg-color="#F7F8FA">
         <div className="container">
           <div className="row align-items-center">
@@ -29,9 +34,9 @@ export default function Home() {
               <div className="saas_banner_content">
                 <h1 className="wow fadeInLeft">Manage clients &amp; teams in your digital Business</h1>
                 <p className="wow fadeInLeft">Chatriox unifies Bulk Email, Bulk WhatsApp, Email Validation, Lead Scraper, Template Builder, and AI Analyzer into one enterprise-ready platform.</p>
-                <a href="#" className="saas_btn wow fadeInUp" data-wow-delay="0.2s">
+                <Link to="/signup" className="saas_btn wow fadeInUp" data-wow-delay="0.2s">
                   <div className="btn_text"><span>Get Started for Free</span><span>Get Started for Free</span></div>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-7">
@@ -79,7 +84,7 @@ export default function Home() {
                   <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Automatic scheduling and throttling</li>
                   <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Team approvals and roles</li>
                 </ul>
-                <a href="#" className="saas_btn"><div className="btn_text"><span>Try Free Version</span><span>Try Free Version</span></div></a>
+                <Link to="/pricing" className="saas_btn"><div className="btn_text"><span>Try Free Version</span><span>Try Free Version</span></div></Link>
               </div>
             </div>
           </div>
@@ -101,7 +106,7 @@ export default function Home() {
                   <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Smart routing and deduplication</li>
                   <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Unified inbox and labels</li>
                 </ul>
-                <a href="#" className="saas_btn"><div className="btn_text"><span>Try Free Version</span><span>Try Free Version</span></div></a>
+                <Link to="/pricing" className="saas_btn"><div className="btn_text"><span>Try Free Version</span><span>Try Free Version</span></div></Link>
               </div>
             </div>
           </div>
@@ -123,7 +128,7 @@ export default function Home() {
                   <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Enrichment, scoring, and dedupe</li>
                   <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>AI-assisted subject lines and copy</li>
                 </ul>
-                <a href="#" className="saas_btn"><div className="btn_text"><span>Try Free Version</span><span>Try Free Version</span></div></a>
+                <Link to="/pricing" className="saas_btn"><div className="btn_text"><span>Try Free Version</span><span>Try Free Version</span></div></Link>
               </div>
             </div>
           </div>
@@ -184,7 +189,7 @@ export default function Home() {
             <img className="shap_two" src="assets/img/home-one/zigzag.png" alt="" />
             <h2 className="title-animation">Take The Next Step Toward Predictable Growth</h2>
             <p className="wow fadeInUp" data-wow-delay="0.5s">Start your free trial. Launch your first campaign in minutes.</p>
-            <a href="#" className="saas_btn wow fadeInUp" data-wow-delay="0.6s"><div className="btn_text"><span>Get a Free Consultation</span><span>Get a Free Consultation</span></div></a>
+            <Link to="/contact" className="saas_btn wow fadeInUp" data-wow-delay="0.6s"><div className="btn_text"><span>Get a Free Consultation</span><span>Get a Free Consultation</span></div></Link>
           </div>
         </div>
       </section>
