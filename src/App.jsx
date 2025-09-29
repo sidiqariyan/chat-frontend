@@ -33,7 +33,7 @@ export default function App() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route element={<SharedLayout />}> 
+        <Route path="/" element={<SharedLayout />}>
           <Route index element={<PageWrapper><Home /></PageWrapper>} />
           <Route path="about" element={<PageWrapper><About /></PageWrapper>} />
           <Route path="services" element={<PageWrapper><Services /></PageWrapper>} />
