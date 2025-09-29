@@ -11,6 +11,7 @@ export default function NavBar() {
     <nav className="navbar navbar-expand-lg sticky_nav navbar_fixed" style={{position:'sticky', top:0, zIndex:1030}}>
       <div className="container">
         <Link className="navbar-brand d-flex align-items-center gap-2" to="/">
+          <FiHexagon />
           <span className="fw-bold brand-wordmark">Chatriox</span>
         </Link>
         <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
