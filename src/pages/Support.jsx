@@ -1,6 +1,7 @@
 import React from 'react'
 import SEO from '../utils/SEO'
 import FAQSection from '../components/FAQSection'
+import StatsSection from '../components/StatsSection'
 
 export default function Support() {
   return (
