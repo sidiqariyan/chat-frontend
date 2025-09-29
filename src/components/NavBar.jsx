@@ -25,7 +25,7 @@ export default function NavBar() {
         <div className="collapse navbar-collapse show" id="navbarSupportedContent">
           <ul className="navbar-nav menu me-lg-auto ms-lg-auto">
             <li className="nav-item"><NavLink to="/" className="nav-link">Home</NavLink></li>
-            <li className={`nav-item dropdown submenu ${open?'show':''}`} onMouseEnter={onEnter} onMouseLeave={onLeave}>
+            <li className={`nav-item dropdown submenu position-static ${open?'show':''}`} onMouseEnter={onEnter} onMouseLeave={onLeave}>
               <button type="button" className="nav-link dropdown-toggle btn btn-link p-0" aria-haspopup="true" aria-expanded={open} onClick={onToggle} onTouchStart={onToggle}>
                 Menu
               </button>
