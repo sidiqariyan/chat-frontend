@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
 import StatsSection from '../components/StatsSection'
 import Testimonials from '../components/Testimonials'
+import Globe from '../components/Globe'
 
 export default function Home() {
   useEffect(() => {
