@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import React, { useEffect } from 'react'
-import NavBar from './NavBar'
+import MegaMenu from './MegaMenu'
 import Footer from './Footer'
 
 export default function SharedLayout() {
@@ -40,7 +40,7 @@ export default function SharedLayout() {
 
   return (
     <div className="body_wrapper">
-      <NavBar />
+      <MegaMenu />
       <Outlet />
       <Footer />
     </div>

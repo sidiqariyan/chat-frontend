@@ -15,3 +15,37 @@
 .navbar.navbar_fixed { z-index: 1050; background:#fff; }
 .navbar .navbar-collapse { display: flex !important; }
 .navbar .menu .nav-link { color:#091c1e !important; }
+
+/* Additional utility classes */
+.hover-bg-light:hover { background-color: #f8f9fa !important; }
+.transition-colors { transition: all 0.2s ease; }
+.transition-transform { transition: transform 0.2s ease; }
+.rotate-180 { transform: rotate(180deg); }
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
+
+/* Service item enhancements */
+.service_item {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.service_item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Price item styling */
+.price_item {
+  @apply bg-white rounded-3 p-6 shadow-sm border border-gray-100 h-100 transition-all duration-300;
+}
+
+.price_item:hover {
+  @apply shadow-lg transform -translate-y-1;
+}
