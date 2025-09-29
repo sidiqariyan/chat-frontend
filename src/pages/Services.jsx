@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
 import FAQSection from '../components/FAQSection'
+import StatsSection from '../components/StatsSection'
+import Testimonials from '../components/Testimonials'
 
 const services = [
   { title: 'Bulk Email Sending', desc: 'High deliverability at scale with smart throttling and warm-up hints.' },
