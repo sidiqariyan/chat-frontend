@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
 
 const services = [
@@ -23,7 +24,7 @@ export default function Services() {
                 <div className="service_item">
                   <h4>{s.title}</h4>
                   <p>{s.desc}</p>
-                  <a href="#" className="saas_btn"><div className="btn_text"><span>Learn More</span><span>Learn More</span></div></a>
+                  <Link to="/contact" className="saas_btn"><div className="btn_text"><span>Learn More</span><span>Learn More</span></div></Link>
                 </div>
               </div>
             ))}
