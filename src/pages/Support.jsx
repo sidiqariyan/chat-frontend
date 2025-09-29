@@ -12,6 +12,7 @@ export default function Support() {
       <section className="sec_padding"><div className="container"><div className="row g-4"><div className="col-md-6"><div className="service_item h-100"><h4>Contact Options</h4><p>Email support@chatriox.example or use the contact form for priority routing.</p></div></div><div className="col-md-6"><div className="service_item h-100"><h4>SLA & Hours</h4><p>Business hours 9–5 (local). Priority SLAs on Enterprise.</p></div></div></div></div></section>
       <section className="sec_padding"><div className="container"><div className="service_item text-center"><h4>Can’t find what you need?</h4><a href="/contact" className="saas_btn"><div className="btn_text"><span>Contact Support</span><span>Contact Support</span></div></a></div></div></section>
       <FAQSection id="faq-support" />
+      <StatsSection />
       <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">Status: All systems operational</h2><a href="/contact" className="saas_btn"><div className="btn_text"><span>Report Issue</span><span>Report Issue</span></div></a></div></div></section>
     </>
   )
