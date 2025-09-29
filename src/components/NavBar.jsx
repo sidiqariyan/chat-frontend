@@ -22,8 +22,8 @@ export default function NavBar() {
             <span className="hamburger-cross"><span></span><span></span></span>
           </span>
         </button>
-        <div className="collapse navbar-collapse show" id="navbarSupportedContent">
-          <ul className="navbar-nav menu me-lg-auto ms-lg-auto">
+        <div className="navbar-collapse d-flex align-items-center justify-content-between" id="navbarSupportedContent">
+          <ul className="navbar-nav menu ms-auto d-flex align-items-center" style={{gap:16}}>
             <li className="nav-item"><NavLink to="/" className="nav-link">Home</NavLink></li>
             <li className={`nav-item dropdown submenu position-static ${open?'show':''}`} onMouseEnter={onEnter} onMouseLeave={onLeave}>
               <button type="button" className="nav-link dropdown-toggle btn btn-link p-0" aria-haspopup="true" aria-expanded={open} onClick={onToggle} onTouchStart={onToggle}>
