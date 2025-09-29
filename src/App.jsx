@@ -19,6 +19,12 @@ import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
+import Careers from './pages/Careers'
+import Resources from './pages/Resources'
+import Integrations from './pages/Integrations'
+import Support from './pages/Support'
 
 const pageVariants = {
   initial: { opacity: 0, y: 10 },
@@ -57,6 +63,12 @@ export default function App() {
           <Route path="login" element={<PageWrapper><Login /></PageWrapper>} />
           <Route path="signup" element={<PageWrapper><Signup /></PageWrapper>} />
           <Route path="dashboard" element={<PageWrapper><Dashboard /></PageWrapper>} />
+          <Route path="privacy" element={<PageWrapper><Privacy /></PageWrapper>} />
+          <Route path="terms" element={<PageWrapper><Terms /></PageWrapper>} />
+          <Route path="careers" element={<PageWrapper><Careers /></PageWrapper>} />
+          <Route path="resources" element={<PageWrapper><Resources /></PageWrapper>} />
+          <Route path="integrations" element={<PageWrapper><Integrations /></PageWrapper>} />
+          <Route path="support" element={<PageWrapper><Support /></PageWrapper>} />
         </Route>
       </Routes>
     </AnimatePresence>

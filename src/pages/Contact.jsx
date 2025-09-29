@@ -28,11 +28,16 @@ export default function Contact() {
                   <div className="col-md-6"><input className="form-control" placeholder="Full Name" required /></div>
                   <div className="col-md-6"><input type="email" className="form-control" placeholder="Work Email" required /></div>
                   <div className="col-md-6"><input className="form-control" placeholder="Company" /></div>
-                  <div className="col-md-6"><select className="form-control select"><option>General</option><option>Sales</option><option>Support</option></select></div>
+                  <div className="col-md-6"><input className="form-control" placeholder="Subject" /></div>
+                  <div className="col-md-6"><select className="form-control select"><option>General</option><option>Sales</option><option>Support</option><option>Bulk Email</option><option>Bulk WhatsApp</option><option>Email Validation</option><option>Lead Scraper</option><option>Template Builder</option><option>AI Analyzer</option></select></div>
                   <div className="col-12"><textarea className="form-control" rows="6" placeholder="How can we help?" required /></div>
                   <div className="col-12"><button className="saas_btn"><div className="btn_text"><span>Send Message</span><span>Send Message</span></div></button></div>
                 </div>
               </form>
+              <div className="service_item mt-3">
+                <h5 className="mb-1">Live chat</h5>
+                <p className="mb-0">Chat widget placeholder. Connect your provider to enable real-time support.</p>
+              </div>
             </div>
           </div>
         </div>

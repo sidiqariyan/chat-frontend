@@ -47,7 +47,9 @@ export default function NavBar() {
                       <h6 className="mb-2">Resources</h6>
                       <ul className="list-unstyled">
                         <li><NavLink to="/blog" className="nav-link">Blog</NavLink></li>
-                        <li><NavLink to="/case-studies" className="nav-link">Case Studies</NavLink></li>
+                        <li><NavLink to="/resources" className="nav-link">Guides</NavLink></li>
+                        <li><NavLink to="/integrations" className="nav-link">Integrations</NavLink></li>
+                        <li><NavLink to="/support" className="nav-link">Help Center</NavLink></li>
                       </ul>
                     </div>
                     <div className="col-lg-3 col-md-6">
@@ -56,6 +58,9 @@ export default function NavBar() {
                         <li><NavLink to="/login" className="nav-link">Login</NavLink></li>
                         <li><NavLink to="/signup" className="nav-link">Create Free Account</NavLink></li>
                         <li><NavLink to="/dashboard" className="nav-link">Dashboard</NavLink></li>
+                        <li><NavLink to="/careers" className="nav-link">Careers</NavLink></li>
+                        <li><NavLink to="/terms" className="nav-link">Terms</NavLink></li>
+                        <li><NavLink to="/privacy" className="nav-link">Privacy</NavLink></li>
                       </ul>
                     </div>
                   </div>
