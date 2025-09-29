@@ -1,6 +1,7 @@
 import React from 'react'
 import SEO from '../utils/SEO'
 import FAQSection from '../components/FAQSection'
+import Testimonials from '../components/Testimonials'
 
 const guides = [
   { t:'Deliverability Basics', d:'Warm-up, DNS, and reputation.' },
