@@ -1,6 +1,8 @@
 import React from 'react'
 import SEO from '../utils/SEO'
 import FAQSection from '../components/FAQSection'
+import StatsSection from '../components/StatsSection'
+import Testimonials from '../components/Testimonials'
 
 export default function Contact() {
   const onSubmit = (e) => { e.preventDefault(); alert('Thanks! We will get back to you shortly.') }
