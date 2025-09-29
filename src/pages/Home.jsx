@@ -49,7 +49,8 @@ export default function Home() {
                     <strong className="d-block text-center mb-2">Global Signals</strong>
                     {/* 3D decorative globe */}
                     <div>
-                      {/* eslint-disable-next-line */}
+                      {/* Three.js wireframe sphere */}
+                      <span className="d-inline-block"><></></span>
                     </div>
                   </div>
                 </div>
