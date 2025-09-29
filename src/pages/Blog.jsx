@@ -17,6 +17,7 @@ export default function Blog() {
       <section className="sec_padding">
         <div className="container">
           <div className="section_title text-center"><h2 className="title-animation">Resources</h2><p>Insights for modern outreach teams.</p></div>
+          <div className="service_item text-center mb-4"><div className="d-inline-flex gap-2 flex-wrap"><span className="badge bg-secondary">Deliverability</span><span className="badge bg-secondary">WhatsApp</span><span className="badge bg-secondary">Compliance</span><span className="badge bg-secondary">AI</span></div></div>
           <div className="row">
             {posts.map(p => (
               <div className="col-md-6 col-lg-4" key={p.slug}>
