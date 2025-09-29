@@ -17,6 +17,7 @@ export default function CaseStudies() {
         </div>
       </section>
       <section className="sec_padding"><div className="container"><div className="row g-4"><div className="col-md-4"><div className="service_item"><h4>Methodology</h4><p>We compare cohorts pre/post migration and normalize by volume.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Guardrails</h4><p>Sampling, A/A tests, and outlier controls to ensure accuracy.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Attribution</h4><p>We attribute outcomes to channels using first-touch and multi-touch models.</p></div></div></div></div></section>
+      <section className="sec_padding"><div className="container"><div className="row g-4 text-center"><div className="col-md-12"><div className="service_item"><h4>Industries</h4><p>Agencies, SaaS, eCommerce, and B2B services.</p></div></div></div></div></section>
       <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">See similar results</h2><a href="/contact" className="saas_btn"><div className="btn_text"><span>Book a Demo</span><span>Book a Demo</span></div></a></div></div></section>
       <FAQSection id="faq-casestudies" />
     </>
