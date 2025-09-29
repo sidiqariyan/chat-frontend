@@ -1,6 +1,8 @@
 import React from 'react'
 import SEO from '../utils/SEO'
 import FAQSection from '../components/FAQSection'
+import StatsSection from '../components/StatsSection'
+import Testimonials from '../components/Testimonials'
 
 export default function Contact() {
   const onSubmit = (e) => { e.preventDefault(); alert('Thanks! We will get back to you shortly.') }
@@ -28,15 +30,25 @@ export default function Contact() {
                   <div className="col-md-6"><input className="form-control" placeholder="Full Name" required /></div>
                   <div className="col-md-6"><input type="email" className="form-control" placeholder="Work Email" required /></div>
                   <div className="col-md-6"><input className="form-control" placeholder="Company" /></div>
-                  <div className="col-md-6"><select className="form-control select"><option>General</option><option>Sales</option><option>Support</option></select></div>
+                  <div className="col-md-6"><input className="form-control" placeholder="Subject" /></div>
+                  <div className="col-md-6"><select className="form-control select"><option>General</option><option>Sales</option><option>Support</option><option>Bulk Email</option><option>Bulk WhatsApp</option><option>Email Validation</option><option>Lead Scraper</option><option>Template Builder</option><option>AI Analyzer</option></select></div>
                   <div className="col-12"><textarea className="form-control" rows="6" placeholder="How can we help?" required /></div>
                   <div className="col-12"><button className="saas_btn"><div className="btn_text"><span>Send Message</span><span>Send Message</span></div></button></div>
                 </div>
               </form>
+              <div className="service_item mt-3">
+                <h5 className="mb-1">Live chat</h5>
+                <p className="mb-0">Chat widget placeholder. Connect your provider to enable real-time support.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <section className="sec_padding"><div className="container"><div className="row g-4"><div className="col-md-6"><div className="service_item"><h4>Support channels</h4><p>Email, chat (coming soon), and ticketing via the contact form.</p></div></div><div className="col-md-6"><div className="service_item"><h4>SLA & response times</h4><p>We aim to reply within one business day. Enterprise SLAs available.</p></div></div></div></div></section>
+      <StatsSection />
+      <Testimonials />
+      <section className="sec_padding"><div className="container"><div className="row g-4"><div className="col-md-12"><div className="service_item text-center"><h4>Enterprise Support</h4><p>Priority SLAs, DPA, and dedicated manager available on Enterprise plans.</p></div></div></div></div></section>
+      <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">Prefer to talk to sales?</h2><a href="/pricing" className="saas_btn"><div className="btn_text"><span>View Plans</span><span>View Plans</span></div></a></div></div></section>
       <FAQSection id="faq-contact" />
     </>
   )

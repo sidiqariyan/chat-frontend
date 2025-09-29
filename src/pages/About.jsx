@@ -1,6 +1,8 @@
 import React from 'react'
 import SEO from '../utils/SEO'
 import FAQSection from '../components/FAQSection'
+import StatsSection from '../components/StatsSection'
+import Testimonials from '../components/Testimonials'
 
 export default function About() {
   return (
@@ -22,6 +24,10 @@ export default function About() {
           </div>
         </div>
       </section>
+      <section className="sec_padding"><div className="container"><div className="section_title text-center"><h2 className="title-animation">Our Team</h2><p>Operators, engineers, and designers focused on outcomes.</p></div><div className="row g-4"><div className="col-md-3"><img className="w-100 rounded" src="assets/img/about/team_1.jpg" alt="" /></div><div className="col-md-3"><img className="w-100 rounded" src="assets/img/about/team_2.jpg" alt="" /></div><div className="col-md-3"><img className="w-100 rounded" src="assets/img/about/team_3.jpg" alt="" /></div><div className="col-md-3"><img className="w-100 rounded" src="assets/img/about/team_4.jpg" alt="" /></div></div></div></section>
+      <section className="sec_padding"><div className="container"><div className="row g-4"><div className="col-md-4"><div className="service_item"><h4>Principles</h4><p>Trust, clarity, and craftsmanship.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Customers</h4><p>We listen and iterate quickly with real-world feedback.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Impact</h4><p>We aim for meaningful, measurable improvements.</p></div></div></div></div></section>
+      <StatsSection />
+      <Testimonials />
       <FAQSection id="faq-about" />
     </>
   )

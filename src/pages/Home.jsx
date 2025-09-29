@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
+import StatsSection from '../components/StatsSection'
+import Testimonials from '../components/Testimonials'
 
 export default function Home() {
   useEffect(() => {
@@ -177,21 +179,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="saas_features_area sec_padding">
-        <div className="container">
-          <div className="section_title text-center"><h2 className="title-animation">Why Companies Choose Chatriox</h2><p className="wow fadeInUp" data-wow-delay="0.4s">Reliability, compliance, and outcomes—without complexity.</p></div>
-          <div className="row">
-            {[{
-              t:'Enterprise-grade deliverability',d:'Warm-up guidance, throttling, and validation baked in.'},
-              {t:'Unified outreach',d:'Email + WhatsApp together with one inbox and shared logic.'},
-              {t:'AI that augments',d:'Recommendations, subject lines, and QA—not black boxes.'},
-              {t:'Security & compliance',d:'SSO, DPA, RBAC, audit logs, and regional data options.'}
-            ].map((c,i)=> (
-              <div className="col-md-6 col-lg-3" key={i}><div className="service_item"><h4>{c.t}</h4><p>{c.d}</p></div></div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsSection />
 
       <section className="sec_padding">
         <div className="container">
@@ -246,26 +234,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="saas_faq_area sec_padding">
-        <div className="container">
-          <div className="section_title text-center">
-            <h2 className="title-animation">Don't Just Take Our Word For It</h2>
-            <p className="wow fadeInUp" data-wow-delay="0.4s">Teams use Chatriox to move fast with consistent quality across channels—email and WhatsApp.</p>
-          </div>
-        </div>
-        <div className="testimonial_slider_two wow fadeInUp" data-wow-delay="0.2s">
-          <div className="item"><div className="t_logo d-flex justify-content-between"><img src="assets/img/home-three/clutch.png" alt="" /><div className="ratting"><i className="fa fa-star"/><i className="fa fa-star"/><i className="fa fa-star"/><i className="fa fa-star"/><i className="fa fa-star"/></div></div><p>“Deliverability improved, replies doubled. Rolling out WhatsApp sequences was effortless.”</p><div className="client_info"><img src="assets/img/home-two/author_img_1.png" alt="" /><div className="text"><h5>Dylan Schiemann</h5><h6>COO</h6></div></div></div>
-          <div className="item"><div className="t_logo d-flex justify-content-between"><img src="assets/img/home-three/google.png" alt="" /><div className="ratting"><i className="fa fa-star"/><i className="fa fa-star"/><i className="fa fa-star"/><i className="fa fa-star"/><i className="fa fa-star"/></div></div><p>“Clean data + AI suggestions = campaigns we can trust at scale.”</p><div className="client_info"><img src="assets/img/home-two/author_img_2.png" alt="" /><div className="text"><h5>Amritansh Raghav</h5><h6>Product Lead</h6></div></div></div>
-        </div>
-        <div className="service_tab_area">
-          <div className="container">
-            <div className="section_title text-center">
-              <h2 className="title-animation">Built For Service Businesses From All Types And Shapes</h2>
-              <p className="wow fadeInUp" data-wow-delay="0.4s">From agencies to growth teams—Chatriox adapts to your workflows.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       <section className="saas_faq_area sec_padding">
         <div className="container">

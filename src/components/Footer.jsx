@@ -26,6 +26,8 @@ export default function Footer() {
                 <li><Link to="/services">Service</Link></li>
                 <li><Link to="/pricing">Pricing</Link></li>
                 <li><Link to="/case-studies">Case Studies</Link></li>
+                <li><Link to="/resources">Resources</Link></li>
+                <li><Link to="/careers">Careers</Link></li>
               </ul>
             </div>
           </div>
@@ -33,10 +35,10 @@ export default function Footer() {
             <div className="f_widget f_link_widget wow fadeInUp" data-wow-delay="0.4s">
               <h3 className="f_title">HELP</h3>
               <ul className="list-unstyled link_widget">
-                <li><a href="#">Customer Support</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/support">Help Center</Link></li>
+                <li><Link to="/terms">Terms & Conditions</Link></li>
+                <li><Link to="/privacy">Privacy Policy</Link></li>
+                <li><Link to="/integrations">Integrations</Link></li>
               </ul>
             </div>
           </div>
