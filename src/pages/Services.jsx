@@ -37,6 +37,8 @@ export default function Services() {
       </section>
       <section className="sec_padding"><div className="container"><div className="row g-4"><div className="col-md-4"><div className="service_item"><h4>How it works</h4><p>Connect, import, validate, and launch with approvals.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Security</h4><p>SSO, RBAC, audit logs, regional data options.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Integrations</h4><p>APIs, webhooks, and prebuilt connectors.</p></div></div></div></div></section>
       <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">Ready to get started?</h2><a href="/signup" className="saas_btn"><div className="btn_text"><span>Create Free Account</span><span>Create Free Account</span></div></a></div></div></section>
+      <Testimonials />
+      <StatsSection />
       <FAQSection id="faq-services" />
     </>
   )
