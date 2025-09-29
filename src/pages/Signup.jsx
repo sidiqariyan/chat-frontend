@@ -1,5 +1,6 @@
 import React from 'react'
 import SEO from '../utils/SEO'
+import FAQSection from '../components/FAQSection'
 
 export default function Signup() {
   return (
@@ -16,6 +17,7 @@ export default function Signup() {
           </form>
         </div></div></div>
       </section>
+      <FAQSection id="faq-signup" />
     </>
   )
 }

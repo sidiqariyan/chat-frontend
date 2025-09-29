@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
+import FAQSection from '../components/FAQSection'
 
 const services = [
   { title: 'Bulk Email Sending', desc: 'High deliverability at scale with smart throttling and warm-up hints.' },
@@ -31,6 +32,7 @@ export default function Services() {
           </div>
         </div>
       </section>
+      <FAQSection id="faq-services" />
     </>
   )
 }

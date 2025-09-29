@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
+import FAQSection from '../components/FAQSection'
 
 const posts = [
   { slug: 'email-warmup', title: 'Email Warm-up Myths', excerpt: 'What actually improves deliverability and what does not.' },
@@ -31,6 +32,7 @@ export default function Blog() {
           </div>
         </div>
       </section>
+      <FAQSection id="faq-blog" />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import SEO from '../utils/SEO'
+import FAQSection from '../components/FAQSection'
 
 export default function Login() {
   return (
@@ -15,6 +16,7 @@ export default function Login() {
           </form>
         </div></div></div>
       </section>
+      <FAQSection id="faq-login" />
     </>
   )
 }

@@ -18,7 +18,7 @@ export default function NavBar() {
               </ul>
             </li>
             <li className="nav-item dropdown submenu">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+              <a className="nav-link dropdown-toggle" href="/services" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
               <i className="fa fa-angle-down mobile_dropdown_icon"></i>
               <ul className="dropdown-menu p-4 mega_menu">
                 <div className="container">
@@ -35,12 +35,12 @@ export default function NavBar() {
                     <div className="col-lg-3 col-md-6">
                       <h6 className="mb-2">Services</h6>
                       <ul className="list-unstyled">
-                        <li><NavLink to="/services" className="nav-link">Bulk Email Sending</NavLink></li>
-                        <li><NavLink to="/services" className="nav-link">Bulk WhatsApp Sending</NavLink></li>
-                        <li><NavLink to="/services" className="nav-link">Email Validation</NavLink></li>
-                        <li><NavLink to="/services" className="nav-link">Lead Scraper</NavLink></li>
-                        <li><NavLink to="/services" className="nav-link">Template Builder</NavLink></li>
-                        <li><NavLink to="/services" className="nav-link">AI Analyzer</NavLink></li>
+                        <li><NavLink to="/services/bulk-email" className="nav-link">Bulk Email Sending</NavLink></li>
+                        <li><NavLink to="/services/bulk-whatsapp" className="nav-link">Bulk WhatsApp Sending</NavLink></li>
+                        <li><NavLink to="/services/email-validation" className="nav-link">Email Validation</NavLink></li>
+                        <li><NavLink to="/services/lead-scraper" className="nav-link">Lead Scraper</NavLink></li>
+                        <li><NavLink to="/services/template-builder" className="nav-link">Template Builder</NavLink></li>
+                        <li><NavLink to="/services/ai-analyzer" className="nav-link">AI Analyzer</NavLink></li>
                       </ul>
                     </div>
                     <div className="col-lg-3 col-md-6">

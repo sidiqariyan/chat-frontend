@@ -1,5 +1,6 @@
 import React from 'react'
 import SEO from '../utils/SEO'
+import FAQSection from '../components/FAQSection'
 
 export default function About() {
   return (
@@ -21,6 +22,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      <FAQSection id="faq-about" />
     </>
   )
 }

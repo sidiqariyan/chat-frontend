@@ -1,5 +1,6 @@
 import React from 'react'
 import SEO from '../utils/SEO'
+import FAQSection from '../components/FAQSection'
 
 export default function CaseStudies() {
   return (
@@ -15,6 +16,7 @@ export default function CaseStudies() {
           </div>
         </div>
       </section>
+      <FAQSection id="faq-casestudies" />
     </>
   )
 }

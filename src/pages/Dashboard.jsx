@@ -1,5 +1,6 @@
 import React from 'react'
 import SEO from '../utils/SEO'
+import FAQSection from '../components/FAQSection'
 
 function Card({ title, children }) {
   return (
@@ -46,6 +47,7 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
+      <FAQSection id="faq-dashboard" />
     </>
   )
 }

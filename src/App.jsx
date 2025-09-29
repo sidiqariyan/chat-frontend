@@ -5,6 +5,12 @@ import SharedLayout from './components/SharedLayout'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
+import BulkEmail from './pages/services/BulkEmail'
+import BulkWhatsApp from './pages/services/BulkWhatsApp'
+import EmailValidation from './pages/services/EmailValidation'
+import LeadScraper from './pages/services/LeadScraper'
+import TemplateBuilder from './pages/services/TemplateBuilder'
+import AIAnalyzer from './pages/services/AIAnalyzer'
 import Pricing from './pages/Pricing'
 import CaseStudies from './pages/CaseStudies'
 import Blog from './pages/Blog'
@@ -37,6 +43,12 @@ export default function App() {
           <Route index element={<PageWrapper><Home /></PageWrapper>} />
           <Route path="about" element={<PageWrapper><About /></PageWrapper>} />
           <Route path="services" element={<PageWrapper><Services /></PageWrapper>} />
+          <Route path="services/bulk-email" element={<PageWrapper><BulkEmail /></PageWrapper>} />
+          <Route path="services/bulk-whatsapp" element={<PageWrapper><BulkWhatsApp /></PageWrapper>} />
+          <Route path="services/email-validation" element={<PageWrapper><EmailValidation /></PageWrapper>} />
+          <Route path="services/lead-scraper" element={<PageWrapper><LeadScraper /></PageWrapper>} />
+          <Route path="services/template-builder" element={<PageWrapper><TemplateBuilder /></PageWrapper>} />
+          <Route path="services/ai-analyzer" element={<PageWrapper><AIAnalyzer /></PageWrapper>} />
           <Route path="pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
           <Route path="case-studies" element={<PageWrapper><CaseStudies /></PageWrapper>} />
           <Route path="blog" element={<PageWrapper><Blog /></PageWrapper>} />

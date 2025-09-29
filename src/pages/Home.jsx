@@ -120,22 +120,133 @@ export default function Home() {
             </div>
             <div className="col-lg-6">
               <div className="saas_features_content wow fadeInLeft" data-wow-delay="0.2s">
-                <h6>Email Validation • Lead Scraper • Template Builder • AI Analyzer</h6>
-                <h2>Data you can trust, insights you can act on</h2>
-                <p>Real-time validation, automated lead capture, flexible templates, and AI-powered analysis keep your pipeline clean and effective.</p>
+                <h6>Email Validation</h6>
+                <h2>Keep your lists clean with real‑time checks</h2>
+                <p>Syntax, MX/DNS, disposable, and role detection—all built in.</p>
                 <ul className="list-unstyled saas_list">
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>MX/DNS checks and syntax rules</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Enrichment, scoring, and dedupe</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>AI-assisted subject lines and copy</li>
+                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Hard/soft bounce prediction</li>
+                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Suppression and dedupe</li>
+                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Scoring and enrichment</li>
                 </ul>
-                <Link to="/pricing" className="saas_btn"><div className="btn_text"><span>Try Free Version</span><span>Try Free Version</span></div></Link>
+                <Link to="/services/email-validation" className="saas_btn"><div className="btn_text"><span>Learn More</span><span>Learn More</span></div></Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="row saas_features_item four">
+            <div className="col-lg-6">
+              <div className="saas_features_img" data-bg-color="#E6D8F5">
+                <img src="assets/img/home-one/features_img_two.png" alt="" />
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="saas_features_content wow fadeInRight" data-wow-delay="0.1s">
+                <h6>AI Template Builder</h6>
+                <h2>Create high‑performing templates in minutes</h2>
+                <p>Variables, approvals, locales, and AI suggestions that learn from results.</p>
+                <ul className="list-unstyled saas_list">
+                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Multi-channel blocks (Email/WhatsApp)</li>
+                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Versioning and experiments</li>
+                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Brand-safe guardrails</li>
+                </ul>
+                <Link to="/services/template-builder" className="saas_btn"><div className="btn_text"><span>Learn More</span><span>Learn More</span></div></Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="row flex-row-reverse saas_features_item five">
+            <div className="col-lg-6">
+              <div className="saas_features_img" data-bg-color="#ADDEF0">
+                <img src="assets/img/home-one/analytic_img.png" alt="" />
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="saas_features_content wow fadeInLeft" data-wow-delay="0.2s">
+                <h6>AI Campaign Analyzer</h6>
+                <h2>Turn signals into clear next steps</h2>
+                <p>Automated insights on copy, timing, targeting, and deliverability health.</p>
+                <ul className="list-unstyled saas_list">
+                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Smart alerts and anomaly detection</li>
+                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Recommendation feed</li>
+                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Attribution and cohorts</li>
+                </ul>
+                <Link to="/services/ai-analyzer" className="saas_btn"><div className="btn_text"><span>Learn More</span><span>Learn More</span></div></Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="testimonial_area_one sec_padding">
+      <section className="saas_features_area sec_padding">
+        <div className="container">
+          <div className="section_title text-center"><h2 className="title-animation">Why Companies Choose Chatriox</h2><p className="wow fadeInUp" data-wow-delay="0.4s">Reliability, compliance, and outcomes—without complexity.</p></div>
+          <div className="row">
+            {[{
+              t:'Enterprise-grade deliverability',d:'Warm-up guidance, throttling, and validation baked in.'},
+              {t:'Unified outreach',d:'Email + WhatsApp together with one inbox and shared logic.'},
+              {t:'AI that augments',d:'Recommendations, subject lines, and QA—not black boxes.'},
+              {t:'Security & compliance',d:'SSO, DPA, RBAC, audit logs, and regional data options.'}
+            ].map((c,i)=> (
+              <div className="col-md-6 col-lg-3" key={i}><div className="service_item"><h4>{c.t}</h4><p>{c.d}</p></div></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="sec_padding">
+        <div className="container">
+          <div className="section_title text-center"><h2 className="title-animation">Case Studies</h2></div>
+          <div className="row">
+            <div className="col-lg-4"><div className="portfolio_item"><div className="portfolio_img"><img src="assets/img/home-one/analytic_small.png" alt="" /></div><div className="p-3"><h4>+2x Reply Rate</h4><p>Warm-up and templates increased replies with fewer bounces.</p></div></div></div>
+            <div className="col-lg-4"><div className="portfolio_item"><div className="portfolio_img"><img src="assets/img/home-one/12.png" alt="" /></div><div className="p-3"><h4>Cleaner Data</h4><p>Validation pipeline reduced invalid contacts and spam traps.</p></div></div></div>
+            <div className="col-lg-4"><div className="portfolio_item"><div className="portfolio_img"><img src="assets/img/home-one/features_img_two.png" alt="" /></div><div className="p-3"><h4>Faster Iteration</h4><p>AI suggestions accelerated testing across markets.</p></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="sec_padding">
+        <div className="container">
+          <div className="section_title text-center"><h2 className="title-animation">From the Blog</h2></div>
+          <div className="row">
+            <div className="col-md-4"><div className="blog_item"><div className="blog_img"><img src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="blog_content p-3"><h4>Email Warm-up Myths</h4><p>What actually improves deliverability and what does not.</p><Link to="/blog" className="saas_btn"><div className="btn_text"><span>Read</span><span>Read</span></div></Link></div></div></div>
+            <div className="col-md-4"><div className="blog_item"><div className="blog_img"><img src="assets/img/home-one/features_img_one.png" alt="" /></div><div className="blog_content p-3"><h4>WhatsApp Compliance 101</h4><p>Templates, opt-ins, and best practices.</p><Link to="/blog" className="saas_btn"><div className="btn_text"><span>Read</span><span>Read</span></div></Link></div></div></div>
+            <div className="col-md-4"><div className="blog_item"><div className="blog_img"><img src="assets/img/home-one/analytic_img.png" alt="" /></div><div className="blog_content p-3"><h4>AI for Subject Lines</h4><p>How to test faster and better with AI.</p><Link to="/blog" className="saas_btn"><div className="btn_text"><span>Read</span><span>Read</span></div></Link></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="service_tab_area">
+        <div className="container">
+          <div className="section_title text-center">
+            <h2 className="title-animation">Built For Service Businesses From All Types And Shapes</h2>
+            <p className="wow fadeInUp" data-wow-delay="0.4s">From agencies to growth teams—Chatriox adapts to your workflows.</p>
+          </div>
+          <div className="service_tab_inner wow fadeInUp" data-wow-delay="0.5s">
+            <ul className="nav nav-tabs justify-content-center">
+              <li className="nav-item"><a className="nav-link service_tab_button active" data-bs-toggle="tab" href="#tab-agency">Digital Marketing</a></li>
+              <li className="nav-item"><a className="nav-link service_tab_button" data-bs-toggle="tab" href="#tab-content">Content</a></li>
+              <li className="nav-item"><a className="nav-link service_tab_button" data-bs-toggle="tab" href="#tab-dev">Development</a></li>
+              <li className="nav-item"><a className="nav-link service_tab_button" data-bs-toggle="tab" href="#tab-design">Design</a></li>
+            </ul>
+            <div className="tab-content service_tab_content accordion accordion-flush">
+              <div id="tab-agency" className="tab-pane fade show active">
+                <div className="row align-items-center"><div className="col-lg-6"><img className="tab_img" src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="col-lg-6"><div className="tab_item_content"><h3>Campaign Ops</h3><p>Plan, launch, and measure multi-channel sequences.</p><div className="service_tab_item"><h4>Onboarding</h4><p>Move fast with role-based access and preflight checks.</p></div><div className="service_tab_item"><h4>QA & Approvals</h4><p>Templates and targeting with built-in reviews.</p></div></div></div></div>
+              </div>
+              <div id="tab-content" className="tab-pane fade">
+                <div className="row align-items-center"><div className="col-lg-6 text-end"><img className="tab_img" src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="col-lg-6"><div className="tab_item_content"><h3>Editorial</h3><p>Manage topics, variants, and experiments.</p><div className="service_tab_item"><h4>Localization</h4><p>Translate and adapt with variable-safe templates.</p></div><div className="service_tab_item"><h4>Insights</h4><p>Recommendations powered by AI Analyzer.</p></div></div></div></div>
+              </div>
+              <div id="tab-dev" className="tab-pane fade">
+                <div className="row align-items-center"><div className="col-lg-6 text-end"><img className="tab_img" src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="col-lg-6"><div className="tab_item_content"><h3>Integrations</h3><p>Connect APIs, CRMs, and webhooks.</p><div className="service_tab_item"><h4>Testing</h4><p>Sandbox keys and safe rollout controls.</p></div><div className="service_tab_item"><h4>Monitoring</h4><p>Health dashboards and alerting.</p></div></div></div></div>
+              </div>
+              <div id="tab-design" className="tab-pane fade">
+                <div className="row align-items-center"><div className="col-lg-6"><img className="tab_img" src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="col-lg-6"><div className="tab_item_content"><h3>Creative</h3><p>Design blocks once, reuse everywhere.</p><div className="service_tab_item"><h4>Components</h4><p>Modular sections for faster iterations.</p></div><div className="service_tab_item"><h4>Brand</h4><p>Guardrails ensure consistency and safety.</p></div></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="saas_faq_area sec_padding">
         <div className="container">
           <div className="section_title text-center">
             <h2 className="title-animation">Don't Just Take Our Word For It</h2>

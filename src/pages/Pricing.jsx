@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
+import FAQSection from '../components/FAQSection'
 
 const plans = [
   { name: 'Starter', price: '$0', features: ['1,000 emails/mo', 'Basic validation', 'Community support'] },
@@ -31,6 +32,7 @@ export default function Pricing() {
           </div>
         </div>
       </section>
+      <FAQSection id="faq-pricing" />
     </>
   )
 }
