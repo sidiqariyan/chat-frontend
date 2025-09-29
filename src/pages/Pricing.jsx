@@ -36,6 +36,8 @@ export default function Pricing() {
       </section>
       <section className="sec_padding"><div className="container"><div className="service_item"><h3>Compare plans</h3><ul className="list-unstyled mb-0"><li>API access: Growth, Enterprise</li><li>SSO & DPA: Enterprise</li><li>Priority support: Growth, Enterprise</li></ul></div></div></section>
       <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">Questions about pricing?</h2><a href="/contact" className="saas_btn"><div className="btn_text"><span>Talk to Sales</span><span>Talk to Sales</span></div></a></div></div></section>
+      <Testimonials />
+      <StatsSection />
       <FAQSection id="faq-pricing" />
     </>
   )
