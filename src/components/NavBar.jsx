@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { FiHexagon } from 'react-icons/fi'
 
 export default function NavBar() {
   const [open, setOpen] = useState(false)
