@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SEO from '../utils/SEO'
 
 const posts = [
@@ -22,7 +23,7 @@ export default function Blog() {
                   <div className="blog_content p-3">
                     <h4>{p.title}</h4>
                     <p>{p.excerpt}</p>
-                    <a href="#" className="saas_btn"><div className="btn_text"><span>Read</span><span>Read</span></div></a>
+                    <Link to="/blog" className="saas_btn"><div className="btn_text"><span>Read</span><span>Read</span></div></Link>
                   </div>
                 </div>
               </div>
