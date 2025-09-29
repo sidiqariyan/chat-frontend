@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: { port: 8080, host: true },
+  server: { port: 8080, host: true, hmr: { overlay: false } },
   preview: { port: 8080, host: true }
 })
