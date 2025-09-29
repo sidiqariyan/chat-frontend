@@ -2,11 +2,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const items = [
-  { name:'Dylan Schiemann', role:'COO', company:'SitePen', img:'/assets/img/home-two/author_img_1.png', text:'Deliverability improved, replies doubled. Rolling out WhatsApp sequences was effortless.' },
-  { name:'Amritansh Raghav', role:'Product Lead', company:'Gainsight', img:'/assets/img/home-two/author_img_2.png', text:'Clean data + AI suggestions = campaigns we can trust at scale.' },
-  { name:'Sara Nguyen', role:'Head of Growth', company:'Lumina', img:'/assets/img/home-two/author_img_3.png', text:'Template Builder let design and growth ship variants quickly with guardrails.' },
-  { name:'Marcus Lee', role:'VP Marketing', company:'NorthPeak', img:'/assets/img/home-two/author_img_4.png', text:'Unified inbox cut our response time by half. The analytics are clear and actionable.' },
-  { name:'Priya Desai', role:'Engineering Manager', company:'Strivio', img:'/assets/img/home-two/author_img_5.png', text:'The API and webhooks made integration simple. Observability is excellent.' }
+  { name:'Dylan Schiemann', role:'COO', company:'SitePen', img:'/assets/img/about/team_1.jpg', text:'Deliverability improved, replies doubled. Rolling out WhatsApp sequences was effortless.' },
+  { name:'Amritansh Raghav', role:'Product Lead', company:'Gainsight', img:'/assets/img/about/team_2.jpg', text:'Clean data + AI suggestions = campaigns we can trust at scale.' },
+  { name:'Sara Nguyen', role:'Head of Growth', company:'Lumina', img:'/assets/img/about/team_3.jpg', text:'Template Builder let design and growth ship variants quickly with guardrails.' },
+  { name:'Marcus Lee', role:'VP Marketing', company:'NorthPeak', img:'/assets/img/about/team_4.jpg', text:'Unified inbox cut our response time by half. The analytics are clear and actionable.' },
+  { name:'Priya Desai', role:'Engineering Manager', company:'Strivio', img:'/assets/img/home-two/author_img_1.png', text:'The API and webhooks made integration simple. Observability is excellent.' }
 ]
 
 export default function Testimonials() {
