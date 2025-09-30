@@ -7,7 +7,7 @@ import {
   FiCheckCircle, 
   FiUsers, 
   FiEdit3, 
-  FiBrain 
+  FiCpu 
 } from 'react-icons/fi'
 
 const features = [
@@ -52,7 +52,7 @@ const features = [
     stats: '80% faster creation'
   },
   {
-    icon: FiBrain,
+    icon: FiCpu,
     title: 'AI Analyzer',
     description: 'Campaign insights and optimization recommendations powered by AI',
     href: '/services/ai-analyzer',
