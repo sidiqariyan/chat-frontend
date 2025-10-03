@@ -25,6 +25,7 @@ import Careers from './pages/Careers'
 import Resources from './pages/Resources'
 import Integrations from './pages/Integrations'
 import Support from './pages/Support'
+import AdminTickets from './pages/AdminTickets'
 
 const pageVariants = {
   initial: { opacity: 0, y: 10 },
@@ -69,6 +70,7 @@ export default function App() {
           <Route path="resources" element={<PageWrapper><Resources /></PageWrapper>} />
           <Route path="integrations" element={<PageWrapper><Integrations /></PageWrapper>} />
           <Route path="support" element={<PageWrapper><Support /></PageWrapper>} />
+          <Route path="admin/tickets" element={<PageWrapper><AdminTickets /></PageWrapper>} />
         </Route>
       </Routes>
     </AnimatePresence>

@@ -10,19 +10,20 @@ import BlogPreview from '../components/BlogPreview'
 import FAQAccordion from '../components/FAQAccordion'
 import Globe from '../components/Globe'
 import AnimatedCounter from '../components/AnimatedCounter'
-import { 
-  FiMail, 
-  FiMessageSquare, 
-  FiCheckCircle, 
-  FiUsers, 
-  FiEdit3, 
+import {
+  FiMail,
+  FiMessageSquare,
+  FiCheckCircle,
+  FiUsers,
+  FiEdit3,
   FiCpu,
   FiTrendingUp,
   FiShield,
   FiGlobe,
   FiZap,
   FiTarget,
-  FiAward
+  FiAward,
+  FiCode
 } from 'react-icons/fi'
 
 const homepageFAQs = [

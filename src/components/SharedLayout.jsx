@@ -2,6 +2,9 @@ import { Outlet, useLocation } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import MegaMenu from './MegaMenu'
 import Footer from './Footer'
+import ChatbotWidget from './ChatbotWidget'
+import ScrollProgress from './ScrollProgress'
+import FloatingActions from './FloatingActions'
 
 export default function SharedLayout() {
   const location = useLocation()
@@ -40,9 +43,12 @@ export default function SharedLayout() {
 
   return (
     <div className="body_wrapper">
+      <ScrollProgress />
       <MegaMenu />
       <Outlet />
       <Footer />
+      <FloatingActions />
+      <ChatbotWidget />
     </div>
   )
 }
