@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import SharedLayout from './components/SharedLayout'
+import Preloader from './components/Preloader'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -44,8 +45,10 @@ function PageWrapper({ children }) {
 export default function App() {
   const location = useLocation()
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+    <>
+      <Preloader />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<PageWrapper><Home /></PageWrapper>} />
           <Route path="about" element={<PageWrapper><About /></PageWrapper>} />
@@ -74,5 +77,6 @@ export default function App() {
         </Route>
       </Routes>
     </AnimatePresence>
+    </>
   )
 }
