@@ -1,15 +1,50 @@
 import React from 'react'
 import SEO from '../../utils/SEO'
-import FAQSection from '../../components/FAQSection'
+import ServiceDetail from '../../components/ServiceDetail'
 
 export default function LeadScraper() {
+  const data = {
+    id: 'lead-scraper',
+    title: 'Lead Scraper',
+    subtitle: 'Capture, deduplicate, and enrich leads from multiple sources.',
+    heroImg: '/assets/img/home-one/Chart.png',
+    overview: 'Centralize lead capture with connectors, deduplication, enrichment, and scoring to keep your pipeline clean and prioritized.',
+    features: [
+      { title: 'Connectors', desc: 'Import from CSV, APIs, forms, and CRMs.' },
+      { title: 'Deduplication', desc: 'Cross-source matching and merge rules.' },
+      { title: 'Enrichment', desc: 'Firmographics, risk, and social data.' },
+      { title: 'Scoring', desc: 'Rank leads by fit and engagement.' }
+    ],
+    steps: [
+      { title: 'Connect', desc: 'Add sources and configure mapping.' },
+      { title: 'Clean', desc: 'Run dedupe and suppression rules.' },
+      { title: 'Enrich', desc: 'Add firmographic and risk data.' },
+      { title: 'Sync', desc: 'Push to CRM and campaigns.' }
+    ],
+    benefits: [
+      { title: 'Cleaner CRM', desc: 'Avoid duplicates and stale data.' },
+      { title: 'Higher Conversion', desc: 'Prioritize better-fit leads.' },
+      { title: 'Faster Handoffs', desc: 'Consistent enriched records.' },
+      { title: 'Confident Targeting', desc: 'Better segments and suppression.' }
+    ],
+    useCases: [
+      { title: 'Event Lists', desc: 'Import, clean, and enrich conference contacts.' },
+      { title: 'Inbound Forms', desc: 'Validate and enrich signups automatically.' },
+      { title: 'Partner Sync', desc: 'Keep shared records aligned.' }
+    ],
+    comparison: [
+      { title: 'Versus Manual CSVs', desc: 'Automated cleaning and enrichment save time.' },
+      { title: 'Versus Single Source', desc: 'Unify fragmented data with consistent rules.' }
+    ],
+    testimonials: [{}, {}],
+    faqs: [{}, {}],
+    cta: { label: 'Grow Your Pipeline', href: '/signup' }
+  }
+
   return (
     <>
       <SEO title="Lead Scraper — Chatriox" description="Capture, deduplicate, and enrich leads from multiple sources." />
-      <section className="sec_padding"><div className="container"><div className="section_title text-center"><h2 className="title-animation">Lead Scraper</h2><p>Build clean, enriched pipelines.</p></div></div></section>
-      <section className="saas_features_area"><div className="container"><div className="row saas_features_item"><div className="col-lg-6"><div className="saas_features_img" data-bg-color="#B3F7D5"><img src="/assets/img/home-one/Chart.png" alt="" /></div></div><div className="col-lg-6"><div className="saas_features_content"><h3>Capture & Enrich</h3><ul className="saas_list list-unstyled"><li><div className="icon"><img src="/assets/img/home-one/check.png" alt="" /></div>Deduplication</li><li><div className="icon"><img src="/assets/img/home-one/check.png" alt="" /></div>Scoring</li></ul></div></div></div></div></section>
-      <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">Grow your pipeline</h2><a href="/signup" className="saas_btn"><div className="btn_text"><span>Start Free</span><span>Start Free</span></div></a></div></div></section>
-      <FAQSection id="faq-leadscraper" />
+      <ServiceDetail {...data} />
     </>
   )
 }

@@ -1,16 +1,50 @@
 import React from 'react'
 import SEO from '../../utils/SEO'
-import FAQSection from '../../components/FAQSection'
+import ServiceDetail from '../../components/ServiceDetail'
 
 export default function TemplateBuilder() {
+  const data = {
+    id: 'template-builder',
+    title: 'Template Builder',
+    subtitle: 'Fast, modular templates with AI suggestions, approvals, and localization.',
+    heroImg: '/assets/img/home-one/features_img_two.png',
+    overview: 'Design once and reuse everywhere with variables, blocks, guardrails, versioning, and experiments powered by AI.',
+    features: [
+      { title: 'Blocks & Components', desc: 'Reusable sections for Email and WhatsApp.' },
+      { title: 'Variables', desc: 'Safely personalize at scale with preview checks.' },
+      { title: 'Localization', desc: 'Manage locales and fallbacks cleanly.' },
+      { title: 'Approvals', desc: 'Get stakeholder sign-off with change history.' }
+    ],
+    steps: [
+      { title: 'Model', desc: 'Define blocks and variables.' },
+      { title: 'Compose', desc: 'Arrange sections and add variants.' },
+      { title: 'Review', desc: 'Run QA and stakeholder approvals.' },
+      { title: 'Launch', desc: 'Publish, experiment, and iterate.' }
+    ],
+    benefits: [
+      { title: 'Faster Shipping', desc: 'Move from idea to launch quickly.' },
+      { title: 'Brand Safety', desc: 'Guardrails enforce consistency.' },
+      { title: 'Collaboration', desc: 'Design, content, and ops work in sync.' },
+      { title: 'Learning', desc: 'AI suggests improvements over time.' }
+    ],
+    useCases: [
+      { title: 'Campaign Templates', desc: 'Build once, adapt per segment.' },
+      { title: 'Localization', desc: 'Global launches with local nuance.' },
+      { title: 'A/B Testing', desc: 'Launch variants and learn quickly.' }
+    ],
+    comparison: [
+      { title: 'Versus Docs', desc: 'Structured, safe, and measurable.' },
+      { title: 'Versus Ad-hoc', desc: 'Reduce errors with QA and reviews.' }
+    ],
+    testimonials: [{}, {}],
+    faqs: [{}, {}],
+    cta: { label: 'Create Your First Template', href: '/signup' }
+  }
+
   return (
     <>
       <SEO title="Template Builder — Chatriox" description="Fast, modular templates with AI suggestions and approvals." />
-      <section className="sec_padding"><div className="container"><div className="section_title text-center"><h2 className="title-animation">Template Builder</h2><p>Build once, reuse across channels.</p></div></div></section>
-      <section className="saas_features_area"><div className="container"><div className="row saas_features_item"><div className="col-lg-6"><div className="saas_features_img" data-bg-color="#E6D8F5"><img src="/assets/img/home-one/features_img_two.png" alt="" /></div></div><div className="col-lg-6"><div className="saas_features_content"><h3>Blocks & Variables</h3><ul className="saas_list list-unstyled"><li><div className="icon"><img src="/assets/img/home-one/check.png" alt="" /></div>Localization</li><li><div className="icon"><img src="/assets/img/home-one/check.png" alt="" /></div>Approvals</li></ul></div></div></div></div></section>
-      <section className="sec_padding"><div className="container"><div className="row"><div className="col-md-4"><div className="service_item"><h4>Versioning</h4><p>Track and roll back safely.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Experiments</h4><p>Run A/B tests quickly.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Governance</h4><p>Brand guardrails by default.</p></div></div></div></div></section>
-      <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">Create your first template</h2><a href="/signup" className="saas_btn"><div className="btn_text"><span>Get Started</span><span>Get Started</span></div></a></div></div></section>
-      <FAQSection id="faq-templatebuilder" />
+      <ServiceDetail {...data} />
     </>
   )
 }

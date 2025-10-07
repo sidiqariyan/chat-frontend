@@ -1,16 +1,50 @@
 import React from 'react'
 import SEO from '../../utils/SEO'
-import FAQSection from '../../components/FAQSection'
+import ServiceDetail from '../../components/ServiceDetail'
 
 export default function EmailValidation() {
+  const data = {
+    id: 'email-validation',
+    title: 'Email Validation',
+    subtitle: 'Real-time checks: syntax, MX/DNS, disposable, role, and spam trap signals.',
+    heroImg: '/assets/img/home-one/analytic_img.png',
+    overview: 'Maintain list health with synchronous API checks, bulk imports, suppression, and enrichment to reduce bounces and protect your domains.',
+    features: [
+      { title: 'Synchronous API', desc: 'Low-latency validation for signups and imports.' },
+      { title: 'Bulk Processing', desc: 'Fast, parallel validation for large lists.' },
+      { title: 'Scoring', desc: 'Quality scores and risk categories.' },
+      { title: 'Suppression', desc: 'Rules to block risky or invalid contacts.' }
+    ],
+    steps: [
+      { title: 'Connect', desc: 'Generate API keys and SDK config.' },
+      { title: 'Validate', desc: 'Run checks during import or real-time.' },
+      { title: 'Segment', desc: 'Score and route to the right campaigns.' },
+      { title: 'Monitor', desc: 'Track list health and bounce rates.' }
+    ],
+    benefits: [
+      { title: 'Fewer Bounces', desc: 'Prevent invalid or risky sends.' },
+      { title: 'Better Inboxing', desc: 'Protect sender reputation with clean lists.' },
+      { title: 'Faster QA', desc: 'Spot issues before launch.' },
+      { title: 'Compliance', desc: 'Safer data handling and storage.' }
+    ],
+    useCases: [
+      { title: 'Signup Validation', desc: 'Block disposable and risky addresses at source.' },
+      { title: 'Preflight Checks', desc: 'Clean imported lists before sending.' },
+      { title: 'Scoring & Enrichment', desc: 'Prioritize high-quality contacts.' }
+    ],
+    comparison: [
+      { title: 'Versus Static Checks', desc: 'Live DNS, MX, and risk signals perform better.' },
+      { title: 'Versus No Validation', desc: 'Higher placement, fewer spam traps, and consistent growth.' }
+    ],
+    testimonials: [{}, {}],
+    faqs: [{}, {}],
+    cta: { label: 'Start with Clean Data', href: '/signup' }
+  }
+
   return (
     <>
       <SEO title="Email Validation — Chatriox" description="Real-time checks to keep lists clean and deliverability high." />
-      <section className="sec_padding"><div className="container"><div className="section_title text-center"><h2 className="title-animation">Email Validation</h2><p>Syntax, MX/DNS, disposable, role, and spam trap signals.</p></div></div></section>
-      <section className="saas_features_area"><div className="container"><div className="row saas_features_item"><div className="col-lg-6"><div className="saas_features_img" data-bg-color="#ADDEF0"><img src="/assets/img/home-one/analytic_img.png" alt="" /></div></div><div className="col-lg-6"><div className="saas_features_content"><h3>Real-time API</h3><ul className="saas_list list-unstyled"><li><div className="icon"><img src="/assets/img/home-one/check.png" alt="" /></div>Low latency checks</li><li><div className="icon"><img src="/assets/img/home-one/check.png" alt="" /></div>Bulk imports</li></ul></div></div></div></div></section>
-      <section className="sec_padding"><div className="container"><div className="row"><div className="col-md-4"><div className="service_item"><h4>Suppression</h4><p>Protect your domains with rules.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Enrichment</h4><p>Score and segment lists.</p></div></div><div className="col-md-4"><div className="service_item"><h4>Exports</h4><p>CSV/JSON and webhooks.</p></div></div></div></div></section>
-      <section className="sec_padding"><div className="container"><div className="promo_content promo_content_bg text-center"><h2 className="title-animation">Start with clean data</h2><a href="/signup" className="saas_btn"><div className="btn_text"><span>Start Free</span><span>Start Free</span></div></a></div></div></section>
-      <FAQSection id="faq-emailvalidation" />
+      <ServiceDetail {...data} />
     </>
   )
 }

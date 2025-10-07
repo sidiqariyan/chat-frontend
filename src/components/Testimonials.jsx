@@ -1,4 +1,8 @@
 import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 import { motion } from 'framer-motion'
 
 const items = [
@@ -14,9 +18,17 @@ export default function Testimonials() {
     <section className="sec_padding">
       <div className="container">
         <div className="section_title text-center"><h2 className="title-animation">What Our Customers Say</h2></div>
-        <div className="row g-4">
+        <Swiper
+          className="py-3"
+          modules={[Autoplay, Pagination]}
+          slidesPerView={1}
+          spaceBetween={24}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          breakpoints={{ 992: { slidesPerView: 2 }, 1200: { slidesPerView: 3 } }}
+        >
           {items.map((t, i) => (
-            <div className="col-md-6 col-lg-4" key={t.name}>
+            <SwiperSlide key={t.name}>
               <motion.div className="service_item h-100" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .45, delay: i * 0.05 }} whileHover={{ y: -4 }}>
                 <div className="d-flex align-items-center gap-3 mb-3">
                   <img src={t.img} alt={t.name} width={48} height={48} style={{borderRadius: '50%'}} />
@@ -27,9 +39,9 @@ export default function Testimonials() {
                 </div>
                 <p className="mb-0">“{t.text}”</p>
               </motion.div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   )

@@ -1,276 +1,594 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import SEO from '../utils/SEO'
-import StatsSection from '../components/StatsSection'
-import Testimonials from '../components/Testimonials'
+import TestimonialSlider from '../components/TestimonialSlider'
+import FAQAccordion from '../components/FAQAccordion'
+import AnimatedCounter from '../components/AnimatedCounter'
+import {
+  FiMail,
+  FiMessageSquare,
+  FiCheckCircle,
+  FiUsers,
+  FiEdit3,
+  FiCpu,
+  FiTrendingUp,
+  FiShield,
+  FiZap,
+  FiTarget,
+  FiAward,
+  FiArrowRight,
+  FiStar,
+  FiGlobe,
+  FiBarChart,
+  FiLayers,
+  FiClock
+} from 'react-icons/fi'
+
+const homepageFAQs = [
+  {
+    question: 'How does Chatriox improve email deliverability?',
+    answer: 'We use smart throttling, warm-up guidance, suppression lists, and real-time validation to maximize inbox placement and protect your sender reputation.'
+  },
+  {
+    question: 'Can I run WhatsApp and Email campaigns together?',
+    answer: 'Yes. Our unified platform lets you manage cross-channel sequences with shared suppression lists and a combined inbox for replies.'
+  },
+  {
+    question: 'What integrations does Chatriox support?',
+    answer: 'Connect SMTP providers, CRMs, APIs, webhooks, and more. Enterprise plans include SSO and DPA options.'
+  },
+  {
+    question: 'How customizable are the templates?',
+    answer: 'Fully customizable with variables, approvals, localization, and AI suggestions. Create once, reuse everywhere.'
+  },
+  {
+    question: 'Do you offer analytics exports?',
+    answer: 'Yes. CSV/JSON exports are available on paid plans, with custom dashboards and advanced analytics on Enterprise.'
+  }
+]
+
+const features = [
+  {
+    icon: FiMail,
+    title: 'Bulk Email Sending',
+    description: 'Enterprise-grade email campaigns with 98.5% average deliverability',
+    href: '/services/bulk-email',
+    color: '#3b82f6',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+  },
+  {
+    icon: FiMessageSquare,
+    title: 'Bulk WhatsApp',
+    description: 'Compliant WhatsApp campaigns with rich media and automation',
+    href: '/services/bulk-whatsapp',
+    color: '#10b981',
+    gradient: 'linear-gradient(135deg, #0cebeb 0%, #20e3b2 50%, #29ffc6 100%)'
+  },
+  {
+    icon: FiCheckCircle,
+    title: 'Email Validation',
+    description: 'Real-time verification with 99.2% accuracy and spam protection',
+    href: '/services/email-validation',
+    color: '#8b5cf6',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+  },
+  {
+    icon: FiUsers,
+    title: 'Lead Scraper',
+    description: 'Intelligent lead capture with enrichment and deduplication',
+    href: '/services/lead-scraper',
+    color: '#f59e0b',
+    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+  },
+  {
+    icon: FiEdit3,
+    title: 'Template Builder',
+    description: 'AI-powered templates with variables and approval workflows',
+    href: '/services/template-builder',
+    color: '#ec4899',
+    gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+  },
+  {
+    icon: FiCpu,
+    title: 'AI Analyzer',
+    description: 'Campaign optimization with predictive insights',
+    href: '/services/ai-analyzer',
+    color: '#6366f1',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+  }
+]
+
+const stats = [
+  { icon: FiMail, value: 120000000, suffix: '+', label: 'Emails Delivered' },
+  { icon: FiTarget, value: 98.5, suffix: '%', label: 'Deliverability Rate' },
+  { icon: FiTrendingUp, value: 240, suffix: '%', label: 'ROI Increase' },
+  { icon: FiAward, value: 500, suffix: '+', label: 'Enterprise Clients' }
+]
+
+const benefits = [
+  {
+    icon: FiShield,
+    title: 'Enterprise Security',
+    description: 'Bank-level encryption and compliance with SOC 2, GDPR, and CCPA'
+  },
+  {
+    icon: FiZap,
+    title: 'Lightning Fast',
+    description: 'Process millions of emails per hour with 99.9% uptime SLA'
+  },
+  {
+    icon: FiBarChart,
+    title: 'Real-time Analytics',
+    description: 'Track performance with live dashboards and detailed reports'
+  },
+  {
+    icon: FiLayers,
+    title: 'Easy Integration',
+    description: 'Connect with your favorite tools in minutes via API or webhooks'
+  }
+]
 
 export default function Home() {
-  useEffect(() => {
-    const $ = window.jQuery || window.$
-    if ($ && $('.testimonial_slider_two').length && typeof $('.testimonial_slider_two').slick === 'function') {
-      $('.testimonial_slider_two').not('.slick-initialized').slick({
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        arrows: false,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        responsive: [
-          { breakpoint: 992, settings: { slidesToShow: 1 } }
-        ]
-      })
-    }
-  }, [])
-
   return (
     <>
-      <SEO title="Chatriox — Manage clients & teams in your digital Business" description="Scale outreach with Chatriox: Bulk Email, Bulk WhatsApp, Email Validation, Lead Scraper, Template Builder, AI Analyzer." image="/assets/img/home-one/dash.png" schema={{
-        '@context':'https://schema.org', '@type':'Organization', name:'Chatriox', url:typeof window!=='undefined'?window.location.origin:'',
-        sameAs:[], logo:'/assets/img/home-one/1.png',
-        contactPoint:[{ '@type':'ContactPoint', contactType:'sales', email:'sales@chatriox.example' }]
-      }} />
-      <section className="saas_banner_area" data-bg-color="#F7F8FA">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-5">
-              <div className="saas_banner_content">
-                <h1 className="wow fadeInLeft">Manage clients &amp; teams in your digital Business</h1>
-                <p className="wow fadeInLeft">Chatriox unifies Bulk Email, Bulk WhatsApp, Email Validation, Lead Scraper, Template Builder, and AI Analyzer into one enterprise-ready platform.</p>
-                <Link to="/signup" className="saas_btn wow fadeInUp" data-wow-delay="0.2s">
-                  <div className="btn_text"><span>Get Started for Free</span><span>Get Started for Free</span></div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-7">
-              <div className="saas_banner_img wow fadeInRight" data-wow-delay="0.2s">
-                <img src="assets/img/home-one/dash.png" alt="" />
-                <a href="https://www.youtube.com/watch?v=ok-plXXHlWw&pp=ygUEaHRtbA%3D%3D" className="video_popup popup-youtube"><i className="fa fa-play"></i></a>
-              </div>
-            </div>
-          </div>
+      <SEO
+        title="Chatriox — Enterprise Outreach Automation Platform"
+        description="Scale outreach with Chatriox: Bulk Email, Bulk WhatsApp, Email Validation, Lead Scraper, Template Builder, AI Analyzer. Trusted by 500+ companies worldwide."
+        image="/assets/img/home-one/dash.png"
+      />
+
+      {/* Hero Section - Gradient Background */}
+      <section
+        className="position-relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          paddingTop: '180px',
+          paddingBottom: '120px'
+        }}
+      >
+        {/* Animated Background Elements */}
+        <div className="position-absolute w-100 h-100 top-0 start-0" style={{ opacity: 0.1 }}>
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="position-absolute bg-white rounded-circle"
+              style={{
+                width: Math.random() * 100 + 50,
+                height: Math.random() * 100 + 50,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.3, 0.6, 0.3]
+              }}
+              transition={{
+                duration: Math.random() * 3 + 2,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              }}
+            />
+          ))}
         </div>
-        <div className="saas_client_logo_area">
-          <h2 className="client_title text-center title-animation">Trusted by agencies managing <span>100+</span> client projects daily</h2>
-          <div className="min_client_area">
-            <a href="#" className="item wow fadeInLeft" data-wow-delay="0.3s"><img src="assets/img/home-one/1.png" alt="" /></a>
-            <a href="#" className="item wow fadeInLeft" data-wow-delay="0.5s"><img src="assets/img/home-one/2.png" alt="" /></a>
-            <a href="#" className="item wow fadeInLeft" data-wow-delay="0.7s"><img src="assets/img/home-one/3.png" alt="" /></a>
-            <a href="#" className="item wow fadeInLeft" data-wow-delay="0.9s"><img src="assets/img/home-one/4.png" alt="" /></a>
-            <a href="#" className="item wow fadeInLeft" data-wow-delay="1.1s"><img src="assets/img/home-one/5.png" alt="" /></a>
-            <a href="#" className="item wow fadeInLeft" data-wow-delay="1.3s"><img src="assets/img/home-one/6.png" alt="" /></a>
-            <a href="#" className="item wow fadeInLeft" data-wow-delay="1.5s"><img src="assets/img/home-one/7.png" alt="" /></a>
-          </div>
-        </div>
-      </section>
 
-      <section className="saas_features_area">
-        <div className="container">
-          <div className="section_title text-center">
-            <h2 className="title-animation">Powerful Features That Set Us Apart and Ahead</h2>
-            <p className="wow fadeInUp" data-wow-delay="0.4s">Operate at scale with dependable deliverability, precise targeting, and AI-enriched analytics—without changing your stack.</p>
-          </div>
-          <div className="row flex-row-reverse saas_features_item one">
+        <div className="container position-relative">
+          <div className="row align-items-center g-5">
             <div className="col-lg-6">
-              <div className="saas_features_img" data-bg-color="#E6D8F5">
-                <img src="assets/img/home-one/features_img_one.png" alt="" />
-                <div className="img_small wow fadeInUp"><img data-parallax='{"y": 40}' src="assets/img/home-one/features_img_two.png" alt="" /></div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="saas_features_content wow fadeInLeft" data-wow-delay="0.2s">
-                <h6>Bulk Email Sending</h6>
-                <h2>Accelerate your outreach with reliable deliverability</h2>
-                <p>Warm-up friendly sending, smart throttling, and templates to engage at scale without hurting domain reputation.</p>
-                <ul className="list-unstyled saas_list">
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Customizable templates and variables</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Automatic scheduling and throttling</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Team approvals and roles</li>
-                </ul>
-                <Link to="/pricing" className="saas_btn"><div className="btn_text"><span>Try Free Version</span><span>Try Free Version</span></div></Link>
-              </div>
-            </div>
-          </div>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="mb-4"
+                >
+                  <span className="badge bg-white text-primary px-4 py-2 rounded-pill fw-semibold fs-6">
+                    <FiZap className="me-2" size={16} />
+                    Trusted by 500+ Companies
+                  </span>
+                </motion.div>
 
-          <div className="row saas_features_item two">
-            <div className="col-lg-6">
-              <div className="saas_features_img" data-bg-color="#ADDEF0">
-                <img src="assets/img/home-one/analytic_img.png" alt="" />
-                <div className="img_small wow fadeInUp" data-wow-delay="0.2s"><img data-parallax='{"y": 40}' src="assets/img/home-one/analytic_small.png" alt="" /></div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="saas_features_content wow fadeInRight" data-wow-delay="0.1s">
-                <h6>Bulk WhatsApp Sending</h6>
-                <h2>Personalized WhatsApp sequences at scale</h2>
-                <p>Rich messaging, media support, and reply tracking across campaigns—compliant and secure.</p>
-                <ul className="list-unstyled saas_list">
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Template approvals and localization</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Smart routing and deduplication</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Unified inbox and labels</li>
-                </ul>
-                <Link to="/pricing" className="saas_btn"><div className="btn_text"><span>Try Free Version</span><span>Try Free Version</span></div></Link>
-              </div>
-            </div>
-          </div>
+                <motion.h1
+                  className="display-3 fw-bold text-white mb-4"
+                  style={{ lineHeight: '1.2' }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                >
+                  Scale Your Outreach
+                  <span className="d-block" style={{ color: '#fbbf24' }}>
+                    With AI Precision
+                  </span>
+                </motion.h1>
 
-          <div className="row flex-row-reverse saas_features_item three">
-            <div className="col-lg-6">
-              <div className="saas_features_img" data-bg-color="#B3F7D5">
-                <img src="assets/img/home-one/Chart.png" alt="" />
-                <img className="img_small wow fadeInUp" data-wow-delay="0.3s" src="assets/img/home-one/12.png" alt="" />
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="saas_features_content wow fadeInLeft" data-wow-delay="0.2s">
-                <h6>Email Validation</h6>
-                <h2>Keep your lists clean with real‑time checks</h2>
-                <p>Syntax, MX/DNS, disposable, and role detection—all built in.</p>
-                <ul className="list-unstyled saas_list">
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Hard/soft bounce prediction</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Suppression and dedupe</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Scoring and enrichment</li>
-                </ul>
-                <Link to="/services/email-validation" className="saas_btn"><div className="btn_text"><span>Learn More</span><span>Learn More</span></div></Link>
-              </div>
-            </div>
-          </div>
+                <motion.p
+                  className="fs-4 text-white text-opacity-90 mb-5"
+                  style={{ lineHeight: '1.8' }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
+                >
+                  The all-in-one platform for bulk email, WhatsApp campaigns, lead generation, and AI-powered analytics.
+                </motion.p>
 
-          <div className="row saas_features_item four">
-            <div className="col-lg-6">
-              <div className="saas_features_img" data-bg-color="#E6D8F5">
-                <img src="assets/img/home-one/features_img_two.png" alt="" />
-              </div>
+                <motion.div
+                  className="d-flex flex-column flex-sm-row gap-3 mb-5"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                >
+                  <Link
+                    to="/signup"
+                    className="btn btn-light btn-lg px-5 py-3 fw-semibold shadow-lg"
+                    style={{ borderRadius: '50px' }}
+                  >
+                    Start Free Trial
+                    <FiArrowRight className="ms-2" />
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="btn btn-outline-light btn-lg px-5 py-3 fw-semibold"
+                    style={{ borderRadius: '50px', borderWidth: '2px' }}
+                  >
+                    Book a Demo
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  className="d-flex align-items-center gap-4 text-white"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 0.6 }}
+                >
+                  {['14-day free trial', 'No credit card', 'Cancel anytime'].map((text, i) => (
+                    <div key={i} className="d-flex align-items-center gap-2">
+                      <FiCheckCircle size={18} />
+                      <small className="fw-medium">{text}</small>
+                    </div>
+                  ))}
+                </motion.div>
+              </motion.div>
             </div>
+
             <div className="col-lg-6">
-              <div className="saas_features_content wow fadeInRight" data-wow-delay="0.1s">
-                <h6>AI Template Builder</h6>
-                <h2>Create high‑performing templates in minutes</h2>
-                <p>Variables, approvals, locales, and AI suggestions that learn from results.</p>
-                <ul className="list-unstyled saas_list">
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Multi-channel blocks (Email/WhatsApp)</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Versioning and experiments</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Brand-safe guardrails</li>
-                </ul>
-                <Link to="/services/template-builder" className="saas_btn"><div className="btn_text"><span>Learn More</span><span>Learn More</span></div></Link>
-              </div>
-            </div>
-          </div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, rotateY: -20 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{ delay: 0.4, duration: 1 }}
+                className="position-relative"
+              >
+                <motion.div
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <img
+                    src="/assets/img/home-one/dash.png"
+                    alt="Dashboard"
+                    className="img-fluid rounded-4 shadow-lg"
+                    style={{ transform: 'perspective(1000px) rotateY(-5deg)' }}
+                  />
+                </motion.div>
 
-          <div className="row flex-row-reverse saas_features_item five">
-            <div className="col-lg-6">
-              <div className="saas_features_img" data-bg-color="#ADDEF0">
-                <img src="assets/img/home-one/analytic_img.png" alt="" />
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="saas_features_content wow fadeInLeft" data-wow-delay="0.2s">
-                <h6>AI Campaign Analyzer</h6>
-                <h2>Turn signals into clear next steps</h2>
-                <p>Automated insights on copy, timing, targeting, and deliverability health.</p>
-                <ul className="list-unstyled saas_list">
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Smart alerts and anomaly detection</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Recommendation feed</li>
-                  <li><div className="icon"><img src="assets/img/home-one/check.png" alt="" /></div>Attribution and cohorts</li>
-                </ul>
-                <Link to="/services/ai-analyzer" className="saas_btn"><div className="btn_text"><span>Learn More</span><span>Learn More</span></div></Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                {/* Floating Stats */}
+                <motion.div
+                  className="position-absolute bg-white rounded-4 shadow-lg p-4"
+                  style={{ top: '10%', right: '-5%', minWidth: '200px' }}
+                  animate={{ y: [0, -15, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="bg-success rounded-3 p-3">
+                      <FiTrendingUp className="text-white" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="fw-bold text-dark mb-0">+240%</h4>
+                      <small className="text-muted">ROI Increase</small>
+                    </div>
+                  </div>
+                </motion.div>
 
-      <StatsSection />
-
-      <section className="sec_padding">
-        <div className="container">
-          <div className="section_title text-center"><h2 className="title-animation">Case Studies</h2></div>
-          <div className="row">
-            <div className="col-lg-4"><div className="portfolio_item"><div className="portfolio_img"><img src="assets/img/home-one/analytic_small.png" alt="" /></div><div className="p-3"><h4>+2x Reply Rate</h4><p>Warm-up and templates increased replies with fewer bounces.</p></div></div></div>
-            <div className="col-lg-4"><div className="portfolio_item"><div className="portfolio_img"><img src="assets/img/home-one/12.png" alt="" /></div><div className="p-3"><h4>Cleaner Data</h4><p>Validation pipeline reduced invalid contacts and spam traps.</p></div></div></div>
-            <div className="col-lg-4"><div className="portfolio_item"><div className="portfolio_img"><img src="assets/img/home-one/features_img_two.png" alt="" /></div><div className="p-3"><h4>Faster Iteration</h4><p>AI suggestions accelerated testing across markets.</p></div></div></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="sec_padding">
-        <div className="container">
-          <div className="section_title text-center"><h2 className="title-animation">From the Blog</h2></div>
-          <div className="row">
-            <div className="col-md-4"><div className="blog_item"><div className="blog_img"><img src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="blog_content p-3"><h4>Email Warm-up Myths</h4><p>What actually improves deliverability and what does not.</p><Link to="/blog" className="saas_btn"><div className="btn_text"><span>Read</span><span>Read</span></div></Link></div></div></div>
-            <div className="col-md-4"><div className="blog_item"><div className="blog_img"><img src="assets/img/home-one/features_img_one.png" alt="" /></div><div className="blog_content p-3"><h4>WhatsApp Compliance 101</h4><p>Templates, opt-ins, and best practices.</p><Link to="/blog" className="saas_btn"><div className="btn_text"><span>Read</span><span>Read</span></div></Link></div></div></div>
-            <div className="col-md-4"><div className="blog_item"><div className="blog_img"><img src="assets/img/home-one/analytic_img.png" alt="" /></div><div className="blog_content p-3"><h4>AI for Subject Lines</h4><p>How to test faster and better with AI.</p><Link to="/blog" className="saas_btn"><div className="btn_text"><span>Read</span><span>Read</span></div></Link></div></div></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="service_tab_area">
-        <div className="container">
-          <div className="section_title text-center">
-            <h2 className="title-animation">Built For Service Businesses From All Types And Shapes</h2>
-            <p className="wow fadeInUp" data-wow-delay="0.4s">From agencies to growth teams—Chatriox adapts to your workflows.</p>
-          </div>
-          <div className="service_tab_inner wow fadeInUp" data-wow-delay="0.5s">
-            <ul className="nav nav-tabs justify-content-center">
-              <li className="nav-item"><a className="nav-link service_tab_button active" data-bs-toggle="tab" href="#tab-agency">Digital Marketing</a></li>
-              <li className="nav-item"><a className="nav-link service_tab_button" data-bs-toggle="tab" href="#tab-content">Content</a></li>
-              <li className="nav-item"><a className="nav-link service_tab_button" data-bs-toggle="tab" href="#tab-dev">Development</a></li>
-              <li className="nav-item"><a className="nav-link service_tab_button" data-bs-toggle="tab" href="#tab-design">Design</a></li>
-            </ul>
-            <div className="tab-content service_tab_content accordion accordion-flush">
-              <div id="tab-agency" className="tab-pane fade show active">
-                <div className="row align-items-center"><div className="col-lg-6"><img className="tab_img" src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="col-lg-6"><div className="tab_item_content"><h3>Campaign Ops</h3><p>Plan, launch, and measure multi-channel sequences.</p><div className="service_tab_item"><h4>Onboarding</h4><p>Move fast with role-based access and preflight checks.</p></div><div className="service_tab_item"><h4>QA & Approvals</h4><p>Templates and targeting with built-in reviews.</p></div></div></div></div>
-              </div>
-              <div id="tab-content" className="tab-pane fade">
-                <div className="row align-items-center"><div className="col-lg-6 text-end"><img className="tab_img" src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="col-lg-6"><div className="tab_item_content"><h3>Editorial</h3><p>Manage topics, variants, and experiments.</p><div className="service_tab_item"><h4>Localization</h4><p>Translate and adapt with variable-safe templates.</p></div><div className="service_tab_item"><h4>Insights</h4><p>Recommendations powered by AI Analyzer.</p></div></div></div></div>
-              </div>
-              <div id="tab-dev" className="tab-pane fade">
-                <div className="row align-items-center"><div className="col-lg-6 text-end"><img className="tab_img" src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="col-lg-6"><div className="tab_item_content"><h3>Integrations</h3><p>Connect APIs, CRMs, and webhooks.</p><div className="service_tab_item"><h4>Testing</h4><p>Sandbox keys and safe rollout controls.</p></div><div className="service_tab_item"><h4>Monitoring</h4><p>Health dashboards and alerting.</p></div></div></div></div>
-              </div>
-              <div id="tab-design" className="tab-pane fade">
-                <div className="row align-items-center"><div className="col-lg-6"><img className="tab_img" src="assets/img/home-one/tab_img.jpg" alt="" /></div><div className="col-lg-6"><div className="tab_item_content"><h3>Creative</h3><p>Design blocks once, reuse everywhere.</p><div className="service_tab_item"><h4>Components</h4><p>Modular sections for faster iterations.</p></div><div className="service_tab_item"><h4>Brand</h4><p>Guardrails ensure consistency and safety.</p></div></div></div></div>
-              </div>
+                <motion.div
+                  className="position-absolute bg-white rounded-4 shadow-lg p-4"
+                  style={{ bottom: '15%', left: '-5%', minWidth: '200px' }}
+                  animate={{ y: [0, 15, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+                >
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="bg-primary rounded-3 p-3">
+                      <FiStar className="text-white" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="fw-bold text-dark mb-0">98.5%</h4>
+                      <small className="text-muted">Deliverability</small>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      <Testimonials />
-
-      <section className="saas_faq_area sec_padding">
+      {/* Stats Section */}
+      <section className="py-5" style={{ marginTop: '-60px', position: 'relative', zIndex: 10 }}>
         <div className="container">
-          <div className="section_title text-center">
-            <h2 className="title-animation">Frequently Asked Questions</h2>
-            <p className="wow fadeInUp" data-wow-delay="0.4s">Find answers about plans, sending limits, validation, and support.</p>
+          <div className="row g-4">
+            {stats.map((stat, index) => {
+              const IconComponent = stat.icon
+              return (
+                <div key={index} className="col-md-6 col-lg-3">
+                  <motion.div
+                    className="bg-white rounded-4 p-4 shadow-lg text-center h-100"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    whileHover={{ y: -10, scale: 1.05 }}
+                  >
+                    <div className="bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex mb-3">
+                      <IconComponent className="text-primary" size={32} />
+                    </div>
+                    <h2 className="fw-bold text-primary mb-2">
+                      <AnimatedCounter from={0} to={stat.value} duration={2.5} suffix={stat.suffix} />
+                    </h2>
+                    <p className="text-muted mb-0 fw-semibold">{stat.label}</p>
+                  </motion.div>
+                </div>
+              )
+            })}
           </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-5" style={{ paddingTop: '120px', paddingBottom: '120px', background: '#f8f9fa' }}>
+        <div className="container">
+          <motion.div
+            className="text-center mb-5"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill fw-semibold mb-3">
+              Our Services
+            </span>
+            <h2 className="display-4 fw-bold text-dark mb-4">Powerful Features, Unified Platform</h2>
+            <p className="fs-5 text-muted mx-auto" style={{ maxWidth: '700px' }}>
+              Everything you need to scale your outreach campaigns with enterprise-grade reliability
+            </p>
+          </motion.div>
+
+          <div className="row g-4">
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon
+              return (
+                <div key={index} className="col-md-6 col-lg-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    whileHover={{ y: -15, scale: 1.03 }}
+                    className="h-100"
+                  >
+                    <Link to={feature.href} className="text-decoration-none">
+                      <div
+                        className="rounded-4 p-5 h-100 position-relative overflow-hidden"
+                        style={{
+                          background: feature.gradient,
+                          minHeight: '320px'
+                        }}
+                      >
+                        <div className="position-relative" style={{ zIndex: 2 }}>
+                          <div className="bg-white rounded-3 p-3 d-inline-flex mb-4">
+                            <IconComponent size={32} style={{ color: feature.color }} />
+                          </div>
+                          <h4 className="fw-bold text-white mb-3">{feature.title}</h4>
+                          <p className="text-white text-opacity-90 mb-4">{feature.description}</p>
+                          <div className="d-flex align-items-center text-white fw-semibold">
+                            Learn More
+                            <FiArrowRight className="ms-2" />
+                          </div>
+                        </div>
+                        <div
+                          className="position-absolute bg-white rounded-circle"
+                          style={{
+                            width: '200px',
+                            height: '200px',
+                            bottom: '-100px',
+                            right: '-100px',
+                            opacity: 0.1
+                          }}
+                        />
+                      </div>
+                    </Link>
+                  </motion.div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-5" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+        <div className="container">
+          <div className="row align-items-center g-5">
+            <div className="col-lg-6">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill fw-semibold mb-3">
+                  Why Choose Us
+                </span>
+                <h2 className="display-5 fw-bold text-dark mb-4">
+                  Built for Scale, Trusted by Enterprises
+                </h2>
+                <p className="fs-5 text-muted mb-5" style={{ lineHeight: '1.8' }}>
+                  Join 500+ companies using Chatriox to transform their outreach strategy with cutting-edge technology and enterprise-grade reliability.
+                </p>
+                <div className="row g-4">
+                  {benefits.map((benefit, index) => {
+                    const IconComponent = benefit.icon
+                    return (
+                      <div key={index} className="col-12">
+                        <motion.div
+                          className="d-flex gap-4"
+                          initial={{ opacity: 0, x: -30 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.1, duration: 0.6 }}
+                        >
+                          <div className="bg-primary bg-opacity-10 rounded-3 p-3 d-flex align-items-center justify-content-center" style={{ minWidth: '64px', height: '64px' }}>
+                            <IconComponent className="text-primary" size={28} />
+                          </div>
+                          <div>
+                            <h5 className="fw-bold text-dark mb-2">{benefit.title}</h5>
+                            <p className="text-muted mb-0">{benefit.description}</p>
+                          </div>
+                        </motion.div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </motion.div>
+            </div>
+            <div className="col-lg-6">
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <img
+                  src="/assets/img/home-one/analytic_img.png"
+                  alt="Analytics"
+                  className="img-fluid rounded-4 shadow-lg"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-5" style={{ paddingTop: '120px', paddingBottom: '120px', background: '#f8f9fa' }}>
+        <div className="container">
+          <motion.div
+            className="text-center mb-5"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill fw-semibold mb-3">
+              Testimonials
+            </span>
+            <h2 className="display-4 fw-bold text-dark mb-4">Loved by Growth Teams</h2>
+            <p className="fs-5 text-muted">See what our customers say about us</p>
+          </motion.div>
+          <TestimonialSlider />
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-5" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+        <div className="container">
+          <motion.div
+            className="text-center mb-5"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill fw-semibold mb-3">
+              FAQ
+            </span>
+            <h2 className="display-4 fw-bold text-dark mb-4">Frequently Asked Questions</h2>
+            <p className="fs-5 text-muted">Find answers to common questions</p>
+          </motion.div>
           <div className="row justify-content-center">
-            <div className="col-lg-10">
-              <div className="accordion faq_inner faq_inner_two ps-4" id="accordionExampleTwo">
-                <div className="accordion-item wow fadeInUp" data-wow-delay="0.5s">
-                  <h2 className="accordion-header" id="headingSeven">
-                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">1. How does Chatriox handle deliverability?</button>
-                  </h2>
-                  <div id="collapseSeven" className="accordion-collapse collapse show" aria-labelledby="headingSeven" data-bs-parent="#accordionExampleTwo">
-                    <div className="accordion-body"><p>We use throttling, warm-up guidance, suppression lists, and validation to maximize deliverability and protect sender reputation.</p></div>
-                  </div>
-                </div>
-                <div className="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                  <h2 className="accordion-header" id="headingEight">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">2. Is WhatsApp sending compliant?</button>
-                  </h2>
-                  <div id="collapseEight" className="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExampleTwo">
-                    <div className="accordion-body"><p>Yes. We support template approvals, opt-outs, and rate controls aligned with platform policies.</p></div>
-                  </div>
-                </div>
-              </div>
+            <div className="col-lg-8">
+              <FAQAccordion faqs={homepageFAQs} id="homepage-faq" />
             </div>
           </div>
-          <div className="promo_content promo_content_bg text-center">
-            <img className="shap_one" src="assets/img/home-one/shapes.png" alt="" />
-            <img className="shap_two" src="assets/img/home-one/zigzag.png" alt="" />
-            <h2 className="title-animation">Take The Next Step Toward Predictable Growth</h2>
-            <p className="wow fadeInUp" data-wow-delay="0.5s">Start your free trial. Launch your first campaign in minutes.</p>
-            <Link to="/contact" className="saas_btn wow fadeInUp" data-wow-delay="0.6s"><div className="btn_text"><span>Get a Free Consultation</span><span>Get a Free Consultation</span></div></Link>
-          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section
+        className="position-relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          paddingTop: '120px',
+          paddingBottom: '120px'
+        }}
+      >
+        <div className="container position-relative" style={{ zIndex: 2 }}>
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="display-4 fw-bold text-white mb-4">
+              Ready to Transform Your Outreach?
+            </h2>
+            <p className="fs-4 text-white text-opacity-90 mb-5 mx-auto" style={{ maxWidth: '700px' }}>
+              Join thousands of companies scaling their growth with Chatriox
+            </p>
+            <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-4">
+              <Link
+                to="/signup"
+                className="btn btn-light btn-lg px-5 py-3 fw-semibold shadow-lg"
+                style={{ borderRadius: '50px' }}
+              >
+                Start Free Trial
+                <FiArrowRight className="ms-2" />
+              </Link>
+              <Link
+                to="/pricing"
+                className="btn btn-outline-light btn-lg px-5 py-3 fw-semibold"
+                style={{ borderRadius: '50px', borderWidth: '2px' }}
+              >
+                View Pricing
+              </Link>
+            </div>
+            <p className="text-white text-opacity-75">
+              ✓ 14-day free trial &nbsp;&nbsp; ✓ No credit card required &nbsp;&nbsp; ✓ Cancel anytime
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Background Pattern */}
+        <div className="position-absolute w-100 h-100 top-0 start-0" style={{ opacity: 0.05 }}>
+          {[...Array(30)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="position-absolute bg-white"
+              style={{
+                width: Math.random() * 4 + 2,
+                height: Math.random() * 4 + 2,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                borderRadius: '50%'
+              }}
+              animate={{
+                scale: [1, 1.5, 1],
+                opacity: [0.3, 0.8, 0.3]
+              }}
+              transition={{
+                duration: Math.random() * 2 + 1,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              }}
+            />
+          ))}
         </div>
       </section>
     </>

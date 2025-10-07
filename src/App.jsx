@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import SharedLayout from './components/SharedLayout'
+import Preloader from './components/Preloader'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -25,6 +26,7 @@ import Careers from './pages/Careers'
 import Resources from './pages/Resources'
 import Integrations from './pages/Integrations'
 import Support from './pages/Support'
+import AdminTickets from './pages/AdminTickets'
 
 const pageVariants = {
   initial: { opacity: 0, y: 10 },
@@ -43,8 +45,10 @@ function PageWrapper({ children }) {
 export default function App() {
   const location = useLocation()
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+    <>
+      <Preloader />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<PageWrapper><Home /></PageWrapper>} />
           <Route path="about" element={<PageWrapper><About /></PageWrapper>} />
@@ -69,8 +73,10 @@ export default function App() {
           <Route path="resources" element={<PageWrapper><Resources /></PageWrapper>} />
           <Route path="integrations" element={<PageWrapper><Integrations /></PageWrapper>} />
           <Route path="support" element={<PageWrapper><Support /></PageWrapper>} />
+          <Route path="admin/tickets" element={<PageWrapper><AdminTickets /></PageWrapper>} />
         </Route>
       </Routes>
     </AnimatePresence>
+    </>
   )
 }
